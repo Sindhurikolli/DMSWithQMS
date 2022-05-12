@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    
+    <test name="DocSOPWithoutCommentsFiveStages">
+        <classes>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.CreateDoctRequestSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.DocRequestReject"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocRequestApprove"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.ApprovalDoctRequestSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.NewDoctSOPInitiateRejectFlow"/>
+           <!-- <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctInitiateSOPRejectFlow"/> -->
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.DeptReviewerSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctInitiateSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocDeptReviewerSOP"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.QAReviewerSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctInitiateSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocDeptReviewerSOP"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocQAReviewerSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.CFTReviewerReject"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctInitiateSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocDeptReviewerSOP"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocQAReviewerSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocCFTReviewSOPRejectflow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.QAApproverReject"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctInitiateSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocDeptReviewerSOP"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocQAReviewerSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocCFTReviewSOPRejectflow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctQAApproverSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.TrngNotificationListSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.TrngApprovalRejectSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctTrainingApprovalSOPRejectedFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.TrngApprovalSOPRejectFlow"/>
+           <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.TrngCompletedListSOPRejectFlow"/>
+           </classes>
+    </test>
+</suite>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    <!--
+    see examples at http://testng.org/doc/documentation-main.html#testng-xml
+
+    <suite-files>
+        <suite-file path="./junit-suite.xml" />
+    </suite-files>
+
+    <test name="TimeOut">
+        <classes>
+            <class name="test.timeout.TimeOutTest" />
+            <class name="test.timeout.TimeOutFromXmlTest"/>
+            <class name="test.timeout.TimeOutThreadLocalSampleTest"/>
+        </classes>
+    </test>
+    -->
+    
+    <test name="DmsDoctWithoutCmtsChgDoctPositiveFiveStgFlow">
+        <classes>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.CreateDoctReqSOPChgDoctApproval"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DoctReqApprovalSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.NewDoctSOPInitiateChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DeptReviewSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAReviewerSOPChgDoctPositiveFlow"/> 
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.CFTReviewerSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAApproverSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.CQAApproverSOPChgDoctPositiveFlw"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DoctTrngNotificationListSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DoctTrngApprovalSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.TrngCompletedListSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.ChangeDoctReqSOPChgApprovalFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.ChangeDoctInitiateSOPChgDoctApprovalFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.ChangeDoctDeptReviewSOPApprovalFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.ChangeDoctSOPQARevieweApprovalFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.ChangeDoctSOPCFTReviewApprovalFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.ChangeDoctSOPQAApproverApprovalFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.ChangeDoctSOPCQAApproverApprovalFlow"/>                       
+        </classes>
+    </test>
+    <test name="ContinuationDoctWithoutCmtsChgDoctPositiveFiveStgFlow">
+        <classes>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DoctTrngNotificationListSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DoctTrngApprovalSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.TrngCompletedListSOPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.MasterDoctSOPChgDoctApprovalFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DoctViewSOPChangeDoctApprovalFlow"/>
+        </classes>        
+    </test>    
+</suite>

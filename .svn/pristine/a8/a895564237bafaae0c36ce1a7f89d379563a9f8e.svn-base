@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    <!--
+    see examples at http://testng.org/doc/documentation-main.html#testng-xml
+
+    <suite-files>
+        <suite-file path="./junit-suite.xml" />
+    </suite-files>
+
+    <test name="TimeOut">
+        <classes>
+            <class name="test.timeout.TimeOutTest" />
+            <class name="test.timeout.TimeOutFromXmlTest"/>
+            <class name="test.timeout.TimeOutThreadLocalSampleTest"/>
+        </classes>
+    </test>
+    -->
+    
+    <test name="DocSOPWithoutCommentsFiveStages">
+        <!--        <packages>
+            <package name=".*"/>
+        </packages>-->
+        <classes>
+<!--            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.CreateTemplateSOPDoctDms"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.TemplateApprovalSOP"/>-->
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.CreateDocumentRequestSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.DocmtApprovalRequestSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.NewDocumentSOPInitiate"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.DeptReviewerSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.QAReviewerSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.CFTReviewerSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.QAApproverSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.CQAApproverStageSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.TrainingNotificationListSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.DoctTrngApprovalSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.TrngCompletedListSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.MasterListDocSOPPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPtPositiveFlow.DocumentViewSOPPositiveFlow"/>
+        </classes>
+    </test>
+</suite>

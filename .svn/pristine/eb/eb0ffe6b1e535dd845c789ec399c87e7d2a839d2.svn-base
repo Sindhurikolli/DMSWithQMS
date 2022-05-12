@@ -1,0 +1,77 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.pss.admin.DmsAdmin;
+
+import com.pss.dms.HelperPackageDms.Helper;
+import com.pss.dms.login.LoginDetails;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import static org.testng.Assert.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+/**
+ *
+ * @author Jeevan
+ */
+public class DmsDocumentTreeCreate extends LoginDetails{
+    
+    public DmsDocumentTreeCreate() {
+    }
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+     @Test
+     public void toDoDocumentTreeCreation() throws InterruptedException {
+     Thread.sleep(1000);
+     driver.findElement(By.id("bmrHomeInCommonHPHeader")).click();
+     Thread.sleep(1000);
+     driver.findElement(By.id("adminTabId")).click();
+     Thread.sleep(1000);
+     driver.findElement(By.xpath("//*[@id=\"side-menu\"]/li[3]/a")).click();
+     Thread.sleep(1000);
+     driver.findElement(By.xpath("//*[@id=\"side-menu\"]/li[3]/ul/li[1]/a")).click();
+     Thread.sleep(1000);
+     methodToDoDocumentTreeCreationInDms();
+     }
+
+    private void methodToDoDocumentTreeCreationInDms() throws InterruptedException {
+        boolean isRecordSelectedForUsers = false;
+        String singleApprovalName = properties.getProperty("SINGLE_APPROVAL");
+        int count = 0;
+        driver.findElement(By.id("tree-container_2_span")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("folderNameInCreateDocTree")).sendKeys(properties.getProperty("FOLDER_NAME_CREATE_DOCUMENT_TREE"));
+        Thread.sleep(1000);
+        driver.findElement(By.id("folderShortNameInCreateDocTree")).sendKeys(properties.getProperty("SHORT_NAME_CREATE_DOCUMENT_TREE"));
+        Thread.sleep(1000);
+        driver.findElement(By.id("selectApprovalInCreateDocTree")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("locationTreeForApproverSelect_1_span")).click();
+        Thread.sleep(1000);
+        isRecordSelectedForUsers = Helper.selectSingleApprovalRecord(driver, singleApprovalName, isRecordSelectedForUsers, count);
+        Thread.sleep(1000);
+        if(isRecordSelectedForUsers){
+            driver.findElement(By.id("selBtnInAppSelectDailog")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.id("descriptionInCreateDocTree")).sendKeys(properties.getProperty("DESCRIPTION_CREATE_DOCUMENT_TREE"));
+            Thread.sleep(1000);
+            driver.findElement(By.id("createInCreateDocTree")).click();
+            WebDriverWait wait = new WebDriverWait(driver, 60);
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("modal-btn")));
+            Thread.sleep(1000);
+            driver.findElement(By.className("modal-btn")).click();
+            Thread.sleep(1000);
+            
+        }else{
+            driver.findElement(By.id("cancelBtnInAppSelectDailog")).click();
+            Thread.sleep(1000);
+        }
+    }
+
+    
+}

@@ -1,0 +1,45 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+DMS_URL = http://10.0.0.100:8094/DMS/
+UserName = initiator1
+PassWord = demo1
+username = admin
+password = demo1
+UserName1 = deptreviewer1
+UserName2 = qareviewer1
+UserName3 = cftreviewer1
+UserName4 = qaapprover1
+
+TEMPLATE_NAME_CREATE_DOCT_STP = sop on sop11
+TEMPLATE_DESCRIPTION_DOCT_STP = sop on sop11
+
+#=======================================================NEW DOC REQ================================================================
+DOCUMENT_NAME_SOP_DOCT_REQUEST = SOPRecord
+KEYWORDS_DOCUMENT_REQUEST = STPRecord-01
+SINGLE_APPROVAL  = qaapprover1
+ESIGN_PASSWD     = demo1
+DOCUMENT_NAME_STP_DOCT_REQUEST = sop12
+DOCUMENT_NAME_SOP_DOCT_REQUEST1 = STPRecord-01
+COMMENTS_NEW_DOCT_REQ_APPROVAL = approve
+DOCT_NO_INITIATE_NEW_DOCT_STP = STPDOCQC-01
+VERSION_NO_INITIATE_NEW_DOCT = 2.0
+DOCT_INITIATE_DOCT_UPLOAD = D:\\document numbering system.pdf
+CREATE_FORMATNAME = F-013
+CREATE_FORMAT_NUMBER = 013
+CREATE_FORMAT_VERSION = 2.0
+ANNEXURE_NAME = A-013
+ANNEXURE_NUMBER = 013
+ANNEXURE_VERSION = 2.0
+
+SINGLE_APPROVAL = d
+ROLE_NAME = QAReviewer
+DESCRIPTION_CREATE_ROLE = Approve
+DOCUMENT_TYPE_CREATION_NAME = SOP1
+ROLE_NAME = 	initiatorD
+COMMENTS = approve
+COMMENTS_TRAINING_NOTIFICATION = approve
+NUMBER_OF_COPIES_SOP = 1
+
+DOCUMENT_NAME_SOP_DOCT_REQUEST_CHG_DOCT_APPROVAL_FLOW = SOPRecord
+CHANGE_CONTROL_NUM_CHG_REQ_SOP = SOPRecord-003
+REASON_FOR_REVISION_CHG_REQ_SOP = Revision

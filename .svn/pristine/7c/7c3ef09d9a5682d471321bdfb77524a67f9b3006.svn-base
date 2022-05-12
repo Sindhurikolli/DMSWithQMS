@@ -1,0 +1,96 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.pss.dms.login;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import static org.testng.Assert.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+
+/**
+ *
+ * @author Jeevan
+ */
+public class LoginCQAApprover {
+    
+    public LoginCQAApprover() {
+    }
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+    public static Properties properties;
+    public static WebDriver driver;
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+        System.out.println("In BeforeMethod - Login");
+
+        // ========================== for properties file - Start ========================== //
+        final String propertyFilePath = "D:/Dms_Jquery_Selenium/DmsSeleniumMavenApp/src/test/java/com/pss/dms/properties/DmsPropertiesUI.properties";
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(propertyFilePath));
+            properties = new Properties();
+            try {
+                properties.load(reader);
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            throw new RuntimeException("LmsUIProperties.properties not found at " + propertyFilePath);
+        }
+        Thread.sleep(2000);
+        // ========================== for properties file - End =========================
+        //System.setProperty("webdriver.ie.driver", "D:/Softwares/Selenium-Webdrivers/32bit/chromedriver.exe");
+        System.setProperty("webdriver.ie.driver", "D:/Softwares/Selenium-Webdrivers/32bit/IEDriverServer.exe");
+        //System.setProperty("webdriver.ie.driver", "C:/Program Files/Mozilla Firefox/firefox.exe");
+        driver = new InternetExplorerDriver();
+        //driver = new ChromeDriver();
+//        driver.manage().window().maximize(); // to maximize FireFox browser
+
+        //Base URL, NOTE :- deploy war and start Server befor calling URL, because Selenium tests won't run without running server
+        driver.get(properties.getProperty("DMS_LOGIN_URL"));
+
+        //Login Page
+        if (properties != null) {
+            driver.findElement(By.name("loginUserName")).sendKeys(properties.getProperty("CQA_APPROVER_WF_USERS_DMS"));
+            Thread.sleep(300);
+            driver.findElement(By.name("loginPassword")).sendKeys(properties.getProperty("PASSWD_LOGIN"));
+
+//            driver.findElement(By.xpath("/html/body/div[1]/section/form/div[5]/button[1]")).click();
+            Thread.sleep(200);
+            driver.findElement(By.xpath("//*[@id=\"loginform\"]/button")).click();
+        } else {
+            System.out.println("Properties file path not exist");
+        }
+        Thread.sleep(2000);
+        //driver.switchTo().window(driver.getWindowHandle());
+
+        System.out.println("LoginDetails --- END");  
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+        System.out.println("In AfterMethod - Logout");
+        Thread.sleep(1000);
+        driver.findElement(By.className("username")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("body > div.container > header > nav > ul > li:nth-child(13) > ul > li:nth-child(3) > a")).click();
+        Thread.sleep(500);
+        driver.close();
+    }
+
+   
+}

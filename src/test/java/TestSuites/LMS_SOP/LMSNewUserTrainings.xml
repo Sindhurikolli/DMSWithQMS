@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+<!-- Change These properties before every run 
+Admin Properties - New User Details, First time User details
+InitialTrainingName, InitialTrainingEcode, UsernameforInitialTraining, LMSNewUser, -->
+  <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+        <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+</listeners> 
+    
+	
+    <test name="DMSWithLMS">
+        <classes>
+          
+           <class name="com.pss.admin.AdminProject.InitiateUserCreation"/>   
+           <class name="com.pss.admin.AdminProject.FirstTimeUserLogin"/>  
+            <class name="com.pss.dms.LMSInitialTraining.InductionProgramCreation"/>
+           <class name="com.pss.dms.LMSInitialTraining.DeptInductionProgram"/>       
+           <class name="com.pss.dms.AssignRoles.LMSAssignRole"/>
+       	  <class name="com.pss.dms.LMSInitialTraining.InitialTraining"/>
+      	  <class name="com.pss.dms.LMSInitialTraining.ApproveInitialTraining"/> 
+      	   <class name="com.pss.dms.LMSInitialTraining.AssignTrainerAndVenue"/>
+      	   <class name="com.pss.dms.LMSInitialTraining.MyTrainings"/> 
+      	    <class name="com.pss.dms.LMSInitialTraining.TrainingAttendence"/>    	   
+            <class name="com.pss.dms.LMSInitialTraining.QuestionPaper"/>
+           <class name="com.pss.dms.LMSInitialTraining.EvaluateQuestions"/>
+           <class name="com.pss.dms.LMSInitialTraining.FieldTrainingStatus"/>
+           <class name="com.pss.dms.LMSInitialTraining.FieldTrainingReview"/> 
+           <class name="com.pss.dms.LMSInitialTraining.InitialTrainingReview"/>  
+           <class name="com.pss.dms.LMSInitialTraining.InitialTrainingCompleted"/>   
+           <class name="com.pss.dms.LMSInitialTraining.InitialTrainingApproval"/>  
+           <class name="com.pss.dms.LMSInitialTraining.AddToUserGroup"/>
+     
+                              
+        </classes>
+    </test>
+</suite>

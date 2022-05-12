@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+<!-- Change These properties before every run ADHOC_SCHEDULE_NAME, DocumentName, DocumentNumber -->
+  <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+        <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+</listeners> 
+    
+            
+     <test name="DMSWithLMS">
+        <classes>         
+           <class name="com.pss.dms.LMSRejectionFlow.CreateNewDocumentSOP"/> 
+             <class name="com.pss.dms.LMSRejectionFlow.NewDocumentRevert"/>
+          <class name="com.pss.dms.LMSRejectionFlow.CreateNewDocumentSOPResubmit"/>
+           <class name="com.pss.dms.LMSRejectionFlow.NewDocumentApproval"/>   
+           <class name="com.pss.dms.LMSRejectionFlow.PropertiesFileUpdateLMSDocdetails"/>                  
+           <class name="com.pss.dms.LMSRejectionFlow.CreateTopic"/>
+      	   <class name="com.pss.dms.LMSRejectionFlow.CreateTopicQuestions"/>
+           <class name="com.pss.dms.LMSRejectionFlow.ModifyTrainer"/>
+           <class name="com.pss.dms.LMSRejectionFlow.AdhocSchedule"/>
+           <class name="com.pss.dms.LMSRejectionFlow.AdhocScheduleRevert"/>
+       	   <class name="com.pss.dms.LMSRejectionFlow.AdhocReSchedule"/>   
+           <class name="com.pss.dms.LMSRejectionFlow.AdhocScheduleApproval"/>
+           <class name="com.pss.dms.LMSRejectionFlow.AssignTrainerAndVenue"/>
+           <class name="com.pss.dms.LMSRejectionFlow.MyTrainings"/>
+           <class name="com.pss.dms.LMSRejectionFlow.TrainingAttendence"/>
+           <class name="com.pss.dms.LMSRejectionFlow.QuestionPaper"/>
+           <class name="com.pss.dms.LMSRejectionFlow.EvaluateQuestions"/>
+           
+          
+   
+        </classes>
+    </test>
+</suite>

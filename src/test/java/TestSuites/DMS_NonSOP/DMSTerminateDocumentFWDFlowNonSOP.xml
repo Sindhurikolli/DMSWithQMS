@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+   <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+        <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+</listeners> 
+ 
+ 	<parameter name="DOCUMENT_NAME_SOP_DOCT_REQUEST" value="${DOCUMENT_NAME_SOP_DOCT_REQUEST}"/>
+	<parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="${DOCT_NO_INITIATE_NEW_DOCT_SOP}"/>
+	
+ <test name="DMS PropertiesUpdate">
+    <classes>           
+           <class name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties"/>
+          
+	</classes>
+ </test>    
+   <test name="DMS TerminateDocumentRequest">
+        <classes>           
+           <class name="com.pss.dms.DMSFWD.TerminateDocumentRequest"/>
+           <class name="com.pss.dms.DMSFWD.TerminateDocumentRequestApproval"/>
+		</classes>
+  </test>  
+  <test name="CCWithDMS DMS InitiationtoApprove">
+        <classes>           
+           <class name="com.pss.dms.DMSFWD.TerminateDoctInitiate"/> 
+           <class name="com.pss.dms.DMSFWD.TerminateDeptReviewer"/> 
+           <class name="com.pss.dms.DMSFWD.TerminateQAReviewer"/>
+           <class name="com.pss.dms.DMSFWD.TerminateCFTReviewer"/>
+           <class name="com.pss.dms.DMSFWD.TerminateQAApprover"/> 
+           <class name="com.pss.dms.DMSFWD.TerminateCQAApprover"/>
+           
+</classes>
+    </test>
+
+
+</suite>

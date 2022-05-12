@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+   <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+        <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+</listeners> 
+ 
+ 	<parameter name="DOCUMENT_NAME_SOP_DOCT_REQUEST" value="${DOCUMENT_NAME_SOP_DOCT_REQUEST}"/>
+	<parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="${DOCT_NO_INITIATE_NEW_DOCT_SOP}"/>
+	
+ <test name="DMS PropertiesUpdate">
+    <classes>           
+           <class name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties"/>
+          
+	</classes>
+ </test>    
+   <test name="DMS TerminateDocumentRequest">
+        <classes>           
+      	   <class name="com.pss.dms.DMSRejectionFlow.TerminateDocumentRequest"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDocumentRequestReject"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDocumentRequestResubmit"/><!--THis is not working issue with Application  -->
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDocumentRequestApproval"/>
+		</classes>
+ 	 </test>  
+	
+	  <test name="DMSInitiate to DHodReview">
+        <classes>
+            <class name="com.pss.dms.DMSRejectionFlow.TerminateDoctInitiate"/>
+       		<class name="com.pss.dms.DMSRejectionFlow.TerminateDeptReviewerReject"/>  
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDoctReInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateQAReviewerReject"/>
+         </classes>
+    </test> 
+	 <test name="DMSQAReviewtoCFTReject">
+        <classes>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDoctReInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateQAReviewer"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateCFTReviewerReject"/>
+            </classes>
+    </test> 
+	 <test name="DMSQAReviewtoCFTApprove">
+        <classes>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDoctReInitiate"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateQAReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateCFTReviewer"/>
+          
+            </classes>
+    </test>
+	 <test name="DMSQAApprover">
+        <classes>
+       		<class name="com.pss.dms.DMSRejectionFlow.TerminateQAApproverRevert"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDoctReInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateQAReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateCFTReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateQAApprover"/>
+           </classes>
+    </test>
+	 <test name="DMSCQAApprover">
+        <classes>
+       	   <class name="com.pss.dms.DMSRejectionFlow.TerminateCQAApproverRevert"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDoctReInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateQAReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateCFTReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateQAApprover"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TerminateCQAApprover"/>
+           </classes>
+    </test>
+
+</suite>

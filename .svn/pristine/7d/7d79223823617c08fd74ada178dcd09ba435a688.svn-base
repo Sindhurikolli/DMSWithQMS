@@ -1,0 +1,192 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.pss.admin.DmsAdmin;
+
+import com.pss.dms.HelperPackageDms.Helper;
+import com.pss.dms.login.LoginDetails;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import static org.testng.Assert.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+/**
+ *
+ * @author Jeevan
+ */
+public class CreateWorkFlowUsersDms extends LoginDetails {
+
+    public CreateWorkFlowUsersDms() {
+    }
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+
+    @Test
+    public void toDoCreateWorkFlowDms() throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(By.id("bmrHomeInCommonHPHeader")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("workFlowTabIdInDMS")).click();
+        Thread.sleep(1000);
+        methodToDoDmsWorkFlowCreation();
+
+    }
+
+    private void methodToDoDmsWorkFlowCreation() throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//*[@id=\"side-menu\"]/li[1]/a")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("regWorkFlowSelect")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("treeContainer_2_switch")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("treeContainer_3_span")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("selectBtnInDocumentTreeSelect")).click();
+        Thread.sleep(1000);
+        selectRecordForDepartmentReviewer();
+        Thread.sleep(1000);
+        selectRecordForQAReviewer();
+        Thread.sleep(1000);
+        selectRecordForCFTReview();
+        Thread.sleep(1000);
+        selectRecordForQAApprover();
+        Thread.sleep(1000);
+        JavascriptExecutor jse2 = (JavascriptExecutor) driver;
+        WebElement element2= driver.findElement(By.id("workFlowUserBrowse5Button"));
+        jse2.executeScript("arguments[0].scrollIntoView(true);", element2);
+        Thread.sleep(2000);
+        selectRecordCQAApprover();
+        Thread.sleep(1000);
+        driver.findElement(By.id("dmsWfSubBtnId")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("eSignPwdInWnd")).sendKeys(properties.getProperty("ESIGN_PASSWD"));
+        Thread.sleep(1000);
+        driver.findElement(By.id("subBtnInValidateESign")).click();
+        Thread.sleep(1000);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("modal-btn")));
+        Thread.sleep(1000);
+        driver.findElement(By.className("modal-btn")).click();
+        Thread.sleep(1000);
+    }
+
+    private void selectRecordForDepartmentReviewer() throws InterruptedException {
+        int count = 0;
+        String userNames = properties.getProperty("DEPT_REVIEWER_WF_USERS_DMS");
+        String userNameDeptReviewerStringArray[] = userNames.split(",");
+        for (String userNameDeptReviewer : userNameDeptReviewerStringArray) {
+            boolean isRecordSelectedForDeptReviewer = false;
+            driver.findElement(By.id("workFlowUserBrowse1Button")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.id("locationTreeForApproverMultiSelect_1_span")).click();
+            Thread.sleep(1000);
+            isRecordSelectedForDeptReviewer = Helper.selectSingleApprovalRecord(driver, userNameDeptReviewer, isRecordSelectedForDeptReviewer, count);
+            Thread.sleep(1000);
+            if (isRecordSelectedForDeptReviewer) {
+                driver.findElement(By.id("selectBrowse1Button")).click();
+                Thread.sleep(1000);
+            } else {
+                driver.findElement(By.id("cancelBrowse1Button")).click();
+                Thread.sleep(1000);
+            }
+        }
+    }
+
+    private void selectRecordForQAReviewer() throws InterruptedException {
+        int count = 0;
+        String userNames = properties.getProperty("QA_REVIEWER_WF_USERS_DMS");
+        String userNameQAReviewerStringArray[] = userNames.split(",");
+        for (String nameQAReviewer : userNameQAReviewerStringArray) {
+            boolean isRecordSelectedQAReviewer = false;
+            driver.findElement(By.id("workFlowUserBrowse2Button")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.id("locationTreeForApproverMultiSelect_1_span")).click();
+            Thread.sleep(1000);
+            isRecordSelectedQAReviewer = Helper.selectSingleApprovalRecord(driver, nameQAReviewer, isRecordSelectedQAReviewer, count);
+            Thread.sleep(1000);
+            if (isRecordSelectedQAReviewer) {
+                driver.findElement(By.id("selectBrowse1Button")).click();
+                Thread.sleep(1000);
+            } else {
+                driver.findElement(By.id("cancelBrowse1Button")).click();
+                Thread.sleep(1000);
+            }
+        }
+    }
+
+    private void selectRecordForCFTReview() throws InterruptedException {
+        int count = 0;
+        String userNames = properties.getProperty("CFT_REVIEW_WF_USERS_DMS");
+        String userNameCFTReviewerStringArray[] = userNames.split(",");
+        for (String nameCFTReview : userNameCFTReviewerStringArray) {
+            boolean isRecordSelectedCFTReview = false;
+            driver.findElement(By.id("workFlowUserBrowse3Button")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.id("locationTreeForApproverMultiSelect_1_span")).click();
+            Thread.sleep(1000);
+            isRecordSelectedCFTReview = Helper.selectSingleApprovalRecord(driver, nameCFTReview, isRecordSelectedCFTReview, count);
+            Thread.sleep(1000);
+            if (isRecordSelectedCFTReview) {
+                driver.findElement(By.id("selectBrowse1Button")).click();
+                Thread.sleep(1000);
+            } else {
+                driver.findElement(By.id("cancelBrowse1Button")).click();
+                Thread.sleep(1000);
+            }
+
+        }
+
+    }
+
+    private void selectRecordForQAApprover() throws InterruptedException {
+        int count = 0;
+        String userNames = properties.getProperty("QA_APPROVER_WF_USERS_DMS");
+        String userNameQAApproverStringArray[] = userNames.split(",");
+        for (String nameQAApprover : userNameQAApproverStringArray) {
+            boolean isRecordSelectedForQAApprover = false;
+            driver.findElement(By.id("workFlowUserBrowse4Button")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.id("locationTreeForApproverMultiSelect_1_span")).click();
+            Thread.sleep(1000);
+            isRecordSelectedForQAApprover = Helper.selectSingleApprovalRecord(driver, nameQAApprover, isRecordSelectedForQAApprover, count);
+            Thread.sleep(1000);
+            if (isRecordSelectedForQAApprover) {
+                driver.findElement(By.id("selectBrowse1Button")).click();
+                Thread.sleep(1000);
+            } else {
+                driver.findElement(By.id("cancelBrowse1Button")).click();
+                Thread.sleep(1000);
+            }
+        }
+    }
+
+    private void selectRecordCQAApprover() throws InterruptedException {
+        int count = 0;
+        String userNames = properties.getProperty("CQA_APPROVER_WF_USERS_DMS");
+        String userNameQAApproverStringArray[] = userNames.split(",");
+        for (String userNameQAApprover : userNameQAApproverStringArray) {
+            boolean isRecordSelectedCQAApprover = false;
+            driver.findElement(By.id("workFlowUserBrowse5Button")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.id("locationTreeForApproverMultiSelect_1_span")).click();
+            Thread.sleep(1000);
+            isRecordSelectedCQAApprover = Helper.selectSingleApprovalRecord(driver, userNameQAApprover, isRecordSelectedCQAApprover, count);
+            Thread.sleep(1000);
+            if (isRecordSelectedCQAApprover) {
+                driver.findElement(By.id("selectBrowse1Button")).click();
+                Thread.sleep(1000);
+            } else {
+                driver.findElement(By.id("cancelBrowse1Button")).click();
+                Thread.sleep(1000);
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    <!--
+    see examples at http://testng.org/doc/documentation-main.html#testng-xml
+
+    <suite-files>
+        <suite-file path="./junit-suite.xml" />
+    </suite-files>
+
+    <test name="TimeOut">
+        <classes>
+            <class name="test.timeout.TimeOutTest" />
+            <class name="test.timeout.TimeOutFromXmlTest"/>
+            <class name="test.timeout.TimeOutThreadLocalSampleTest"/>
+        </classes>
+    </test>
+    -->
+    
+    <test name="STPDoctChangeDoctWithoutCmtsThreeStgsFlow">
+        <!--        <packages>
+            <package name=".*"/>
+        </packages>-->
+        <classes>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.CreateDoctRequestSTPWithChgDoctPositiveflow"/> 
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.ApprovalDoctRequestSTPWithChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.NewDoctInitiateSTPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.DeptReviewerSTPWithChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.QAReviewerSTPWithChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.CFTReviewerSTPDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.TrngNotificationSTPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.TrngApprovalWithChgDoctSTPPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.TrngCompletedSTPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.ChangeDoctRequestSTPWithPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.ChangedDoctInitiateSTPApprovalFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.ChangedDoctSTPDeptReviewPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.ChangedDoctSTPQAReviewerPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.ChangedDoctSTPCFTReviewerPositiveFlow"/>
+        </classes>
+    </test>
+    <test name="STPDoctChangeDoctWithoutCmtsThreeStgsFlowContinuation">
+        <classes>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.TrngNotificationSTPChgDoctPositiveFlow"/>   
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.TrngApprovalWithChgDoctSTPPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.TrngCompletedSTPChgDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.MasterListSTPChangeDoctPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.STPChgDoctWithOutCmtsPositiveFlow.DocumentViewSTPChgDoctPositiveFlow"/>
+        </classes>               
+    </test>    
+</suite>

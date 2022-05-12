@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    <!--
+    see examples at http://testng.org/doc/documentation-main.html#testng-xml
+
+    <suite-files>
+        <suite-file path="./junit-suite.xml" />
+    </suite-files>
+
+    <test name="TimeOut">
+        <classes>
+            <class name="test.timeout.TimeOutTest" />
+            <class name="test.timeout.TimeOutFromXmlTest"/>
+            <class name="test.timeout.TimeOutThreadLocalSampleTest"/>
+        </classes>
+    </test>
+    -->
+    
+    <test name="DmsSOPChangeDoctWithCmtsRejectFlowFiveStgs">
+        <!--        <packages>
+            <package name=".*"/>
+        </packages>-->
+        <classes>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.CreateDoctRequestSOPChgeDoctRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.ApprovalReqDoctSOPChangeRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.NewDoctSOPChgRejectInitiate"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.DeptReviewerSOPChgRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.QAReviewerChgSOPDoctRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.CFTReviewerSOPChgRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.QAApproverChgSOPDocRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.CQAApproverChgSOPDoctRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.TrngNotificationDocSOPChangeRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.DoctTrainingApprovalSOPChangeRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.TrngCompletedDocSOPChangeRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.ChangeDoctReqSOPChgRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.ChangedDoctInitiateSOPChangeRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.ChangedDocumentDeptReviewRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.ChangedDoctQAReviewerDoctRejectingSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.RejectedChangedDoctInitiateChgRejFlow"/> 
+        </classes>      
+    </test>
+    <test name="ContinuationSOPChangeDoctWithCmtsRejectFlowFiveStgs">
+        <classes>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.ChangedDocumentDeptReviewRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.RejectedChangedDoctQAReviewRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.RejectedCFTReviewApprovalDoctSOPChgRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.RejectedQAApproverApprovalSOPDocChgRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.RejectedChgDoctSOPCQAApproverApprovaChgRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.TrngNotificationDocSOPChangeRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.DoctTrainingApprovalSOPChangeRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.TrngCompletedDocSOPChangeRejFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.MasterListSOPChangeDoctRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctRejectFlow.DoctViewSOPChangeDoctRejectFlow"/>
+        </classes>        
+    </test>    
+</suite>

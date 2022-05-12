@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    
+    <test name="DocSOPWithoutCommentsFiveStages">
+        <classes>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.CCInitiation"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.deptReviewerCC"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.QAReviewerCC"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.QAApproverCC"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.TermDoctInitiate"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.DeptreviewerTermDoctReject"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.TermDoctReInitiate"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.DeptReviewerTermDoct"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.QAReviewerTermDoctReject"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.TermDoctReInitiate"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.DeptReviewerTermDoct"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.QAReviewerTermDocument"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.CFTReviewerTermDocumentReject"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.TermDoctReInitiate"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.DeptReviewerTermDoct"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.QAReviewerTermDocument"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.CFTReviewerTermDocument"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.QAApproverTermDocumentReject"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.TermDoctReInitiate"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.DeptReviewerTermDoct"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.QAReviewerTermDocument"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.CFTReviewerTermDocument"/>
+           <class name="com.pss.dms.Initiation.DmsDocsSOPTerminateDocumentRejectionFlow.QAApproverTermDocument"/>
+           
+           
+           
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    
+    <test name="DocSOPWithoutCommentsFiveStages">
+        <classes>
+           <class name="com.pss.qms.Initiation.DmsDocsSOPTermintaeDocument.CCInitiation"/>
+           <class name="com.pss.qms.Initiation.DmsDocsSOPTermintaeDocument.DeptReviewerCC"/>
+           <class name="com.pss.qms.Initiation.DmsDocsSOPTermintaeDocument.QAReviewerCC"/>
+           <class name="com.pss.qms.Initiation.DmsDocsSOPTermintaeDocument.QAApproverCC"/>
+           <class name="com.pss.qms.Initiation.DmsDocsSOPTermintaeDocument.TermDoctInitiate"/>
+           <class name="com.pss.qms.Initiation.DmsDocsSOPTermintaeDocument.DeptReviewerTermDocument"/>
+           <class name="com.pss.qms.Initiation.DmsDocsSOPTermintaeDocument.QAreviewerTermDocument"/>
+           <class name="com.pss.qms.Initiation.DmsDocsSOPTermintaeDocument.CFTReviewerTermDocument"/>
+           <class name="com.pss.qms.Initiation.DmsDocsSOPTermintaeDocument.QAApproverTermDocument"/>
+           
+        </classes>
+    </test>
+</suite>

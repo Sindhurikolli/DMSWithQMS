@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    <test name="DmsDoctWithoutCmtsChgDoctPositiveFiveStgFlow">
+        <classes>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.CCInitiation"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DeptReviewerCC"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAReviewerCC"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.CFTReviewerCC"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.RegReviewerCC"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.CustomerNotification"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.CustomerResponse"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAReReviewCC"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAApproverCC"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.PostApprovalActionInitiate"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.PostApprovalActionReview"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.PostApprovalActionApproval"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAReviewerCC"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAReviewerCC"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAReviewerCC"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.ChangeDoctInitiate"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DeptReviewerChngDoc"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAReviewerChngDoc"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.CFTReviewerChngDoc"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.QAApproverChngDoc"/> 
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DocTrngNotificationListChngDoc"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.DoctTrngApprovalChngDoc"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPChangeDoctApprovalFlow.TrngCompletedListChgDoc"/>
+        </classes>
+    </test>
+</suite>

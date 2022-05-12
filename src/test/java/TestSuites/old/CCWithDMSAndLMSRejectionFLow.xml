@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    
+    <test name="CCWithDMSAndLMS">
+        <classes>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CCInitiation"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DeptReviewerReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.ReInitiateDocument"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DeptReviewerApprove"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.QAReviewReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.ReInitiateDocument"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DeptReReview"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.QAReviewApproveAfterReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CFTReviewReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.QAReviewerAfterCFTReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CFTReviewApprove"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.RegReviewerReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.QAReviewerAfterCFTReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CFTReviewApprove"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.RegReviewerApprove"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CustomerNotification"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CustomerResponseReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.QAReviewAfterCustomerReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CFTReviewApprove"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.RegReviewerApprove"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CustomerNotification"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CustomerResponse"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.QAReviewWithoutCFT"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.QAApproverReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.QAReviewAfterApproveReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.QAApprover"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.PostApprovalActionInitiate"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.PostApprovalActionReviewReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.PostApprovalActionInitiateAfterReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.PostApprovalActionReviewApprove"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.PostApprovalActionApprovalReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.PostApprovalActionReviewApprove"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.PostApprovalActionApproval"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSNewDocumentInitiateSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSDeptReviewerRejectSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSReInitiateDocument"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSDeptReviewerSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAReviewerRejectSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSReInitiateDocument"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSDeptReviewerSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAReviewerSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMScftReviewerRejectSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSReInitiateDocument"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSDeptReviewerSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAReviewerSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMScftReviewerSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAApproverReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSReInitiateDocument"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSDeptReviewerSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAReviewerSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMScftReviewerSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAApproverSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSTrainingNotificationList"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CreateTopic"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.CreaticTopicQuestions"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.ModifyTrainer"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.AdhocSchedule"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.AdhocScheduleReject"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.ReScheduleAdhoc"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.AdhocScheduleApproval"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.AssignTrainerAndVenue"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.MyTrainings"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAApproverSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAApproverSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAApproverSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAApproverSOP"/>
+           <class name="com.pss.dms.CCWithDMSAndLMSRejectionFlow.DMSQAApproverSOP"/>
+           
+
+        </classes>
+    </test>
+</suite>

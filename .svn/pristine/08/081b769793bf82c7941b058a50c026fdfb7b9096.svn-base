@@ -1,0 +1,126 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.pss.admin.DmsAdmin;
+
+import com.pss.dms.login.LoginDetailsInitiator;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import static org.testng.Assert.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+/**
+ *
+ * @author Jeevan
+ */
+public class DmsDocumentTreeApproval extends LoginDetailsInitiator{
+    
+    public DmsDocumentTreeApproval() {
+    }
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+     @Test
+     public void toDoApprovalDmsDocumentTree() throws InterruptedException {
+     Thread.sleep(1200);
+     driver.findElement(By.id("bmrHomeInCommonHPHeader")).click();
+     Thread.sleep(1000);
+     driver.findElement(By.id("myActivitiesInDMS")).click();
+     Thread.sleep(1000);
+     methodToDoApprovalForDocumentTree();
+     }
+
+    private void methodToDoApprovalForDocumentTree() throws InterruptedException {
+        driver.findElement(By.id("dmsApprovalId")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("dmsDocTreePageId")).click();
+        Thread.sleep(1000);
+        methodToSelectRecordForApprovalDoctTree();
+    }
+
+    private void methodToSelectRecordForApprovalDoctTree() throws InterruptedException {
+        boolean isRecordSelectedForApprovalDocTree = false;
+        int count =0;
+        String documentTreeName = properties.getProperty("FOLDER_NAME_CREATE_DOCUMENT_TREE");
+        isRecordSelectedForApprovalDocTree = selectRecordForApprovalDoctTree(documentTreeName,isRecordSelectedForApprovalDocTree,count);
+        Thread.sleep(1000);
+        if(isRecordSelectedForApprovalDocTree){
+            driver.findElement(By.id("commentsInDocTreeAppr")).sendKeys(properties.getProperty("COMMENTS_DOCUMENT_TREE_APPROVAL"));
+            Thread.sleep(1000);
+            driver.findElement(By.id("approveInApprovalDocType")).click();
+            Thread.sleep(1000);
+            WebDriverWait wait = new WebDriverWait(driver, 70);
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("modal-btn")));
+            Thread.sleep(1000);
+            driver.findElement(By.className("modal-btn")).click();
+            Thread.sleep(1000);      
+        }else{
+            System.out.println("Record is not Selected");
+        }
+    }
+
+    private boolean selectRecordForApprovalDoctTree(String documentTreeName, boolean isRecordSelectedForApprovalDocTree, int count) throws InterruptedException {
+        WebElement table = driver.findElement(By.id("approvalDocumentTreeTable"));
+        WebElement tableBody = table.findElement(By.tagName("tbody"));
+        int perPageNoOfRecordsPresent = tableBody.findElements(By.tagName("tr")).size();
+        int totalNoOfRecords = 0;
+        int noOfRecordsChecked = 0;
+        if (perPageNoOfRecordsPresent > 0) {
+            String a = driver.findElement(By.className("jtable-page-info")).getText();// For Ex: Showing 1-1 of 1
+            String[] parts = a.split(" of ");
+            try {
+                totalNoOfRecords = Integer.parseInt(parts[1].trim());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        if (perPageNoOfRecordsPresent > 0 && count == 0) {
+            if ((totalNoOfRecords > 1) && ((documentTreeName == null) || ("".equalsIgnoreCase(documentTreeName)))) {
+                documentTreeName = driver.findElement(By.xpath("//*[@id=\"approvalDocumentTreeTable\"]/div/table/tbody/tr[1]/td[3]")).getText();//documentTreeName
+            } else if ((documentTreeName == null) || ("".equalsIgnoreCase(documentTreeName))) {
+                documentTreeName = driver.findElement(By.xpath("//*[@id=\"approvalDocumentTreeTable\"]/div/table/tbody/tr/td[3]")).getText();//documentTreeName
+            }                                                   
+            ++count;
+        }
+        if (perPageNoOfRecordsPresent > 0) {
+            while (noOfRecordsChecked < totalNoOfRecords) {
+                if (totalNoOfRecords > 1) {
+                    for (int i = 1; i <= perPageNoOfRecordsPresent; i++) {
+                        String documentTreeNameApproval = driver.findElement(By.xpath("//*[@id=\"approvalDocumentTreeTable\"]/div/table/tbody/tr[" + i + "]/td[3]")).getText();//documentTreeName
+                        if (documentTreeName.equalsIgnoreCase(documentTreeNameApproval)) {
+                            driver.findElement(By.xpath("//*[@id=\"approvalDocumentTreeTable\"]/div/table/tbody/tr[" + i + "]/td[3]")).click();
+                            isRecordSelectedForApprovalDocTree = true;
+                            break;                       
+                        }
+                    }
+                    if (isRecordSelectedForApprovalDocTree) {
+                        break;
+                    }
+                } else {
+                    String documentTreeNameApproval = driver.findElement(By.xpath("//*[@id=\"approvalDocumentTreeTable\"]/div/table/tbody/tr/td[3]")).getText();
+                    if (documentTreeName.equalsIgnoreCase(documentTreeNameApproval)) {
+                        driver.findElement(By.xpath("//*[@id=\"approvalDocumentTreeTable\"]/div/table/tbody/tr/td[3]")).click();
+                        isRecordSelectedForApprovalDocTree = true;
+                        break;
+                    }
+                }
+                noOfRecordsChecked += perPageNoOfRecordsPresent;
+                if ((!isRecordSelectedForApprovalDocTree) && (noOfRecordsChecked < totalNoOfRecords)) {
+                    driver.findElement(By.className("jtable-page-number-next")).click();//next page in Document approve list
+                    Thread.sleep(3000);
+                    table = driver.findElement(By.id("approvalDocumentTreeTable"));//Document Tree approve table
+                    tableBody = table.findElement(By.tagName("tbody"));
+                    perPageNoOfRecordsPresent = tableBody.findElements(By.tagName("tr")).size();
+                }
+            }
+        }
+        return isRecordSelectedForApprovalDocTree;
+    }
+
+   
+}

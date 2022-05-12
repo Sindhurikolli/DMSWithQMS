@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+  <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+</listeners> 
+    
+    <test name="DMSWithLMS">
+        <classes>
+           <class name="com.pss.dms.CCWithDMS.CCInitiation"/> 
+           <class name="com.pss.dms.CCWithDMS.DeptReviewerCC"/> 
+           <class name="com.pss.dms.CCWithDMS.QAReviewerCC"/>
+           <class name="com.pss.dms.CCWithDMS.CFTReviewCC"/>
+           <class name="com.pss.dms.CCWithDMS.RegReviewerCC"/>
+           <class name="com.pss.dms.CCWithDMS.CustomerNotification"/>
+           <class name="com.pss.dms.CCWithDMS.CustomerResponse"/>
+           <class name="com.pss.dms.CCWithDMS.QAReReviewCC"/>
+           <class name="com.pss.dms.CCWithDMS.QAApproverCC"/> 
+           <class name="com.pss.dms.CCWithDMS.PostApprovalActionInitiate"/>
+           <class name="com.pss.dms.CCWithDMS.PostApprovalActionReview"/>
+           <class name="com.pss.dms.CCWithDMS.PostApprovalActionApproval"/> 
+           <class name="com.pss.dms.DMSWithLMS.NewDocumentInitiation"/>
+           <class name="com.pss.dms.DMSWithLMS.DMSDeptReviewer"/>
+           <class name="com.pss.dms.DMSWithLMS.DMSQAReviewer"/>
+           <class name="com.pss.dms.DMSWithLMS.DMSCFTReviewer"/>
+           <class name="com.pss.dms.DMSWithLMS.DMSQAApprover"/>
+           <class name="com.pss.dms.DMSWithLMS.DMSDocumentTrngNotificatiomList"/>
+           <class name="com.pss.dms.DMSWithLMS.CreateTopic"/>
+      	   <class name="com.pss.dms.DMSWithLMS.CreateTopicQuestions"/>
+           <class name="com.pss.dms.DMSWithLMS.ModifyTrainer"/>
+           <class name="com.pss.dms.DMSWithLMS.AdhocSchedule"/>
+           <class name="com.pss.dms.DMSWithLMS.AdhocScheduleApproval"/>
+           <class name="com.pss.dms.DMSWithLMS.AssignTrainerAndVenue"/>
+           <class name="com.pss.dms.DMSWithLMS.MyTrainings"/>
+           <class name="com.pss.dms.DMSWithLMS.TrainingAttendence"/>
+           <class name="com.pss.dms.DMSWithLMS.QuestionPaper"/>
+           <class name="com.pss.dms.DMSWithLMS.EvaluateQuestions"/> 
+           <class name="com.pss.dms.DMSWithLMS.NotifyDocController"/>
+           <class name="com.pss.dms.DMSWithLMS.TrngCompletedList"/>           
+        </classes>
+    </test>
+</suite>

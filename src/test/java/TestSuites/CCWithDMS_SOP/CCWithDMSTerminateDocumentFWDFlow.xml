@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+   <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+        <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+</listeners> 
+
+	 <parameter name="DocumentType" value="${DocumentType}"/>
+     <parameter name="ProductCode" value="${ProductCode}"/>  
+  
+     <test name="DMS Properties File Update">
+        <classes>
+           <class name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties"> 
+          	<methods>
+				<include name="TerminateDocument"/>
+			</methods>
+			</class>
+        </classes>
+    </test>   
+    <test name="CCWithDMS CC InitiationToApprove">
+        <classes>
+           <class name="com.pss.dms.CCFWD.CCInitiation"/> 
+           <class name="com.pss.dms.CCFWD.DeptReviewerCC"/> 
+           <class name="com.pss.dms.CCFWD.QAReviewerCC"/> 
+           <class name="com.pss.dms.CCFWD.CFTReviewCC"/>
+           <class name="com.pss.dms.CCFWD.RegReviewerCC"/>
+           <class name="com.pss.dms.CCFWD.CustomerNotification"/>
+           <class name="com.pss.dms.CCFWD.CustomerResponse"/>
+           <class name="com.pss.dms.CCFWD.QAReReviewCC"/>
+           <class name="com.pss.dms.CCFWD.QAApproverCC"/> 
+ </classes>
+    </test>   
+  <test name="CCWithDMS CC PostApprovalAction InitiateToApprove">
+        <classes>            
+           <class name="com.pss.dms.CCFWD.PostApprovalActionInitiateTerminateDocument"/>  
+           <class name="com.pss.dms.CCFWD.PostApprovalActionReview"/>
+           <class name="com.pss.dms.CCFWD.PostApprovalActionApproval"/>
+        </classes>
+    </test>
+  <test name="CCWithDMS DMS InitiationtoApprove">
+        <classes>           
+           <class name="com.pss.dms.DMSFWD.TerminateDoctInitiate"/> 
+           <class name="com.pss.dms.DMSFWD.TerminateDeptReviewer"/> 
+           <class name="com.pss.dms.DMSFWD.TerminateQAReviewer"/>
+           <class name="com.pss.dms.DMSFWD.TerminateCFTReviewer"/>
+           <class name="com.pss.dms.DMSFWD.TerminateQAApprover"/> 
+           <class name="com.pss.dms.DMSFWD.TerminateCQAApprover"/>
+</classes>
+    </test>
+
+ <test name="CCWithDMS CC AIPerformToApprove">
+        <classes>           
+        
+           <class name="com.pss.dms.CCFWD.ActionItemPerform"/>
+           <class name="com.pss.dms.CCFWD.ActionItemReview"/> 
+           <class name="com.pss.dms.CCFWD.ActionItemApprove"/>
+  </classes>
+    </test>
+ <test name="CCWithDMS CC ClosureReviewtoApprove">
+        <classes>           
+           <class name="com.pss.dms.CCFWD.CCclosureReview"/>
+           <class name="com.pss.dms.CCFWD.CCclosureApprove"/>
+           
+           
+        </classes>
+    </test>
+</suite>

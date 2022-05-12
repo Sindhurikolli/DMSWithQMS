@@ -1,0 +1,22 @@
+Non SOP Suites
+mvn clean test -DDOCUMENT_NAME_SOP_DOCT_REQUEST=Document_1 -DDocumentType=STP -DProductCode=P1 -DDOCT_NO_INITIATE_NEW_DOCT_SOP=D1 -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\DMS_NonSOP\DMSNewDocumentFWDFlowNonSOP.xml
+
+mvn clean test -DDOCUMENT_NAME_SOP_DOCT_REQUEST=Document_2 -DDocumentType=STP -DProductCode=P1 -DDOCT_NO_INITIATE_NEW_DOCT_SOP=D2 -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\DMS_NonSOP\DMSNewDocumentRejectionFlowNonSOP.xml
+
+mvn clean test -DDOCUMENT_NAME_SOP_DOCT_REQUEST=Document_1 -DDOCT_NO_INITIATE_NEW_DOCT_SOP=D1 -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\DMS_NonSOP\DMSChangeDocumentFWDFlowNonSOP.xml
+
+mvn clean test -DDOCUMENT_NAME_SOP_DOCT_REQUEST=Document_2 -DDOCT_NO_INITIATE_NEW_DOCT_SOP=D2 -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\DMS_NonSOP\DMSChangeDocumentRejectionFlowNonSOP.xml
+
+mvn clean test -DDOCUMENT_NAME_SOP_DOCT_REQUEST=Document_1 -DDOCT_NO_INITIATE_NEW_DOCT_SOP=D1 -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\DMS_NonSOP\DMSTerminateDocumentFWDFlowNonSOP.xml
+
+SOP Suites
+mvn clean test -DDOCUMENT_NAME_SOP_DOCT_REQUEST=Document_3 -DDocumentType=SOP -DProductCode=P1 -DDOCT_NO_INITIATE_NEW_DOCT_SOP=D3 -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\DMS_SOP\DMSNewDocumentFWDFlow.xml
+
+mvn clean test -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\CCWithDMSWithLMS_SOP\CC_DMS_LMSNewDocumentFwdFlow.xml
+
+
+
+
+mvn clean test -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\LMS_SOP\LMSFwdFlow.xml
+mvn clean test -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\LMS_SOP\LMSRejectionFlow.xml
+mvn clean test -Dsurefire.suiteXmlFiles=src\test\java\TestSuites\LMS_SOP\LMSNewUserTrainings.xml

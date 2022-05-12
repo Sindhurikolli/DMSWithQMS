@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+  <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+        <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+</listeners>
+
+
+	<parameter name="DocumentType" value="STP" />
+	<parameter name="ProductCode" value="${ProductCode}" />
+	<parameter name="ADHOC_SCHEDULE_NAME"
+		value="${ADHOC_SCHEDULE_NAME}" />
+
+	<test name="DMS Properties File Update">
+		<classes>
+			<class
+				name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties">
+				<methods>
+					<include name="ChangeDocument" />
+					<include name="ScheduleName" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+    
+     <test name="CCWithDMSAndLMS Initiation to DHod">
+        <classes>
+           <class name="com.pss.dms.CCRejectionFlow.CCInitiation"/>
+           <class name="com.pss.dms.CCRejectionFlow.DeptReviewerReject"/>
+           <class name="com.pss.dms.CCRejectionFlow.ReInitiateDocument"/>
+           <class name="com.pss.dms.CCRejectionFlow.DeptReviewerApprove"/>
+         </classes>
+    </test> 
+	  <test name="CCWithDMSAndLMS QAReviewer">
+        <classes>           
+           <class name="com.pss.dms.CCRejectionFlow.QAReviewReject"/> 
+           <class name="com.pss.dms.CCRejectionFlow.ReInitiateDocument"/>
+           <class name="com.pss.dms.CCRejectionFlow.DeptReReview"/> 
+           <class name="com.pss.dms.CCRejectionFlow.QAReviewApproveAfterReject"/>
+         </classes>
+    </test>   
+	 <test name="CCWithDMSAndLMS CFT and RA Reject">
+        <classes> 
+           <class name="com.pss.dms.CCRejectionFlow.CFTReviewReject"/>
+           <class name="com.pss.dms.CCRejectionFlow.QAReviewAfterCFTReject"/>
+           <class name="com.pss.dms.CCRejectionFlow.CFTReviewApprove"/>
+           <class name="com.pss.dms.CCRejectionFlow.RegReviewerReject"/>
+     	 </classes>
+    </test>  
+	 <test name="CCWithDMSAndLMS CFTRACustomerReject">
+        <classes> 
+           <class name="com.pss.dms.CCRejectionFlow.QAReviewAfterCFTReject"/> 
+           <class name="com.pss.dms.CCRejectionFlow.CFTReviewApprove"/>
+           <class name="com.pss.dms.CCRejectionFlow.RegReviewerApprove"/>
+           <class name="com.pss.dms.CCRejectionFlow.CustomerNotification"/>
+           <class name="com.pss.dms.CCRejectionFlow.CustomerResponseReject"/>
+            </classes>
+    </test>   
+	 <test name="CCWithDMSAndLMS CFTRACustomerApprove">
+        <classes> 
+           <class name="com.pss.dms.CCRejectionFlow.QAReviewAfterCustomerReject"/>
+           <class name="com.pss.dms.CCRejectionFlow.CFTReviewApprove"/>
+           <class name="com.pss.dms.CCRejectionFlow.RegReviewerApprove"/> 
+           <class name="com.pss.dms.CCRejectionFlow.CustomerNotification"/>
+           <class name="com.pss.dms.CCRejectionFlow.CustomerResponse"/>
+            </classes>
+    </test> 
+	 <test name="CCWithDMSAndLMS QAApprover">
+        <classes> 
+           <class name="com.pss.dms.CCRejectionFlow.QAReviewWithOutCFT"/>
+           <class name="com.pss.dms.CCRejectionFlow.QAApproverReject"/>
+           <class name="com.pss.dms.CCRejectionFlow.QAReviewAfterApproveReject"/>
+           <class name="com.pss.dms.CCRejectionFlow.QAApprover"/>
+         </classes>
+    </test> 
+	 <test name="CCWithDMSAndLMS PostApproval Actions Initiate">
+        <classes> 
+           <class name="com.pss.dms.CCRejectionFlow.PostApprovalActionInitiateChangeDocument"/> 
+           <class name="com.pss.dms.CCRejectionFlow.PostApprovalActionReviewReject"/> 
+           <class name="com.pss.dms.CCRejectionFlow.PostApprovalActionInitiateAfterReject"/>
+            <class name="com.pss.dms.CCRejectionFlow.PostApprovalActionReviewApprove"/> 
+      </classes>
+    </test>
+	 <test name="CCWithDMSAndLMS PostApproval Actions Review">
+        <classes>        
+          
+           <class name="com.pss.dms.CCRejectionFlow.PostApprovalActionApprovalReject"/>  
+           <class name="com.pss.dms.CCRejectionFlow.PostApprovalActionReviewApprove"/>
+           <class name="com.pss.dms.CCRejectionFlow.PostApprovalActionApproval"/>
+         </classes>
+    </test>
+    
+    <test name="DMSWithLMS">
+        <classes>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDoctInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDeptReviewerReject"/>  
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDocReInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeQAReviewerReject"/>
+           
+        </classes>
+    </test>        
+     <test name="DMSWithLMS1">
+        <classes> 
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDocReInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeQAReviewer"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.ChangecftReviewerReject"/>
+              
+        </classes>
+    </test>          
+     <test name="DMSWithLMS2">
+        <classes>   
+         <class name="com.pss.dms.DMSRejectionFlow.ChangeDocReInitiate"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeQAReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeCFTReviewer"/>
+                   
+     </classes>
+    </test>           
+     <test name="DMSWithLMS3">
+        <classes>         
+          
+          <class name="com.pss.dms.DMSRejectionFlow.ChangeQAApproverReject"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDocReInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeQAReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeCFTReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeQAApprover"/>   
+                        
+     </classes>
+    </test>           
+     <test name="DMSWithLMS4">
+        <classes>          
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeCQAApproverReject"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDocReInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeQAReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeCFTReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeQAApprover"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.ChangeCQAApprover"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSTrainingNotificatiomList"/> 
+           <class name="com.pss.dms.LMSRejectionFlow.CreateTopic"/>
+      	   <class name="com.pss.dms.LMSRejectionFlow.CreateTopicQuestions"/>
+           <class name="com.pss.dms.LMSRejectionFlow.ModifyTrainer"/>
+           <class name="com.pss.dms.LMSRejectionFlow.AdhocSchedule"/>
+           <class name="com.pss.dms.LMSRejectionFlow.AdhocScheduleRevert"/>
+       	   <class name="com.pss.dms.LMSRejectionFlow.AdhocReSchedule"/>   
+           <class name="com.pss.dms.LMSRejectionFlow.AdhocScheduleApproval"/>
+           <class name="com.pss.dms.LMSRejectionFlow.AssignTrainerAndVenue"/>
+           <class name="com.pss.dms.LMSRejectionFlow.MyTrainings"/>
+           <class name="com.pss.dms.LMSRejectionFlow.TrainingAttendence"/>
+           <class name="com.pss.dms.LMSRejectionFlow.QuestionPaper"/>
+           <class name="com.pss.dms.LMSRejectionFlow.EvaluateQuestions"/> 
+           <class name="com.pss.dms.LMSRejectionFlow.NotifyDocController"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TrainingCompletedList"/>
+   
+        </classes>
+    </test>
+    	 <test name="CCWithDMSAndLMS ActionItemPerformandReview">
+        <classes>
+           <class name="com.pss.dms.CCRejectionFlow.ActionItemPerform"/>
+           <class name="com.pss.dms.CCRejectionFlow.ActionItemReviewerRevert"/>
+           <class name="com.pss.dms.CCRejectionFlow.ActionItemPerformAfterReject"/>
+           <class name="com.pss.dms.CCRejectionFlow.ActionItemReview"/>
+           <class name="com.pss.dms.CCRejectionFlow.ActionItemApproveReject"/>
+            </classes>
+    </test> 
+	 <test name="CCWithDMSAndLMS ActionItemReviewAndApprove">
+        <classes>
+           <class name="com.pss.dms.CCRejectionFlow.ActionItemPerformAfterReject"/>
+           <class name="com.pss.dms.CCRejectionFlow.ActionItemReview"/>
+           <class name="com.pss.dms.CCRejectionFlow.ActionItemApprove"/>
+           <class name="com.pss.dms.CCRejectionFlow.CCClosureReview"/>
+            </classes>
+    </test> 
+	 <test name="CCWithDMSAndLMS CCClosure ReviewAndApprove">
+        <classes>
+           <class name="com.pss.dms.CCRejectionFlow.CCclosureApproveRevert"/>
+           <class name="com.pss.dms.CCRejectionFlow.CCClosureReview"/>
+           <class name="com.pss.dms.CCRejectionFlow.CCclosureApprove"/>      
+                      
+
+        </classes>
+    </test> 
+</suite>

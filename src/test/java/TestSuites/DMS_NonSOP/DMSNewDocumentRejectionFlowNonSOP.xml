@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+   <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+        <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+</listeners> 
+    
+  	<parameter name="DOCUMENT_NAME_SOP_DOCT_REQUEST" value="${DOCUMENT_NAME_SOP_DOCT_REQUEST}"/>
+	<parameter name="DocumentType" value="${DocumentType}"/>
+	<parameter name="ProductCode" value="${ProductCode}"/>
+	<parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="${DOCT_NO_INITIATE_NEW_DOCT_SOP}"/>
+	
+ <test name="DMS PropertiesUpdate">
+    <classes>           
+           <class name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties"/>
+          
+	</classes>
+ </test>      
+ 	<test name="DMS NewDocumentRequest">
+        <classes>           
+           <class name="com.pss.dms.DMSRejectionFlow.CreateDocumentRequest"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DocumentRequestReject"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.CreateDocumentRequestResubmit"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DocumentRequestApproval"/>
+		</classes>
+    </test>  
+	 <test name="DMS DMSInitiate to DHodReview">
+        <classes>
+            <class name="com.pss.dms.DMSRejectionFlow.DMSNewDocumentInitiate"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDeptReviewerReject"/>  
+           <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSQAReviewerReject"/>
+            </classes>
+    </test> 
+	 <test name="DMS DMSQAReview to CFTReject">
+        <classes>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSQAReviewer"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.DMScftReviewerReject"/>
+            </classes>
+    </test>  
+	 <test name="DMS DMSQAReview to CFTApprove">
+        <classes>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSQAReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMScftReviewer"/>
+          
+            </classes>
+    </test>
+	 <test name="DMS DMSQAApprover">
+        <classes>
+       		<class name="com.pss.dms.DMSRejectionFlow.DMSQAApproverReject"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSQAReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMScftReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSQAApprover"/>
+           </classes>
+    </test>
+     <test name="DMS DMSCQAApprover">
+        <classes>
+       	   <class name="com.pss.dms.DMSRejectionFlow.DMSCQAApproverReject"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDeptReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSQAReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMScftReviewer"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSQAApprover"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSCQAApprover"/>
+           </classes>
+    </test>
+	 <test name="DMS TrainingNotificationToComplete">
+        <classes>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSNoTrainingNotificationList"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDocumentTrainingApprovalReject"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.RejectedDocumentTrainingNotificationAfterReject"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDocumentTrainingApproval"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TrainingCompletedList"/>
+         </classes>
+    </test> 
+	
+</suite>

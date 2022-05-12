@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT]">
+  <parameter name="ProductCode" value="P1"/>
+  <parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="D"/>
+  <parameter name="DocumentType" value="SOP"/>
+  <parameter name="DOCUMENT_NAME_SOP_DOCT_REQUEST" value="Document"/>
+  <parameter name="ADHOC_SCHEDULE_NAME" value="Adhoc"/>
+  <listeners>
+    <listener class-name="com.pss.dms.Listerners.TestListener"/>
+    <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+  </listeners>
+  <test thread-count="5" name="DMSWithLMS4(failed)">
+    <classes>
+      <class name="com.pss.dms.LMSRejectionFlow.QuestionPaper">
+        <methods>
+          <include name="setUp"/>
+          <include name="toQuestionPaper"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.LMSRejectionFlow.QuestionPaper -->
+      <class name="com.pss.dms.LMSRejectionFlow.AdhocReSchedule">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="toAdhocSchedule"/>
+        </methods>
+      </class> <!-- com.pss.dms.LMSRejectionFlow.AdhocReSchedule -->
+      <class name="com.pss.dms.LMSRejectionFlow.AdhocScheduleApproval">
+        <methods>
+          <include name="setUp"/>
+          <include name="toAdhocScheduleApproval"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.LMSRejectionFlow.AdhocScheduleApproval -->
+      <class name="com.pss.dms.DMSRejectionFlow.TrainingCompletedList">
+        <methods>
+          <include name="testIT"/>
+          <include name="setUp"/>
+          <include name="toTrainingCompletedList"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.DMSRejectionFlow.TrainingCompletedList -->
+      <class name="com.pss.dms.LMSRejectionFlow.NotifyDocController">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="toNotifyDocController"/>
+        </methods>
+      </class> <!-- com.pss.dms.LMSRejectionFlow.NotifyDocController -->
+      <class name="com.pss.dms.LMSRejectionFlow.TrainingAttendence">
+        <methods>
+          <include name="toTrainingAttendence"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.LMSRejectionFlow.TrainingAttendence -->
+      <class name="com.pss.dms.LMSRejectionFlow.AssignTrainerAndVenue">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="createAssignTrainerAndVenue"/>
+        </methods>
+      </class> <!-- com.pss.dms.LMSRejectionFlow.AssignTrainerAndVenue -->
+      <class name="com.pss.dms.LMSRejectionFlow.EvaluateQuestions">
+        <methods>
+          <include name="toEvaluateQuestions"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.LMSRejectionFlow.EvaluateQuestions -->
+    </classes>
+  </test> <!-- DMSWithLMS4(failed) -->
+  <test thread-count="5" name="CCWithDMSAndLMS ActionItemPerformandReview(failed)">
+    <classes>
+      <class name="com.pss.dms.CCRejectionFlow.ActionItemReview">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testIT"/>
+          <include name="toActionItemReview"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.ActionItemReview -->
+      <class name="com.pss.dms.CCRejectionFlow.ActionItemPerform">
+        <methods>
+          <include name="testIT"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="toActionItemPerform"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.ActionItemPerform -->
+      <class name="com.pss.dms.CCRejectionFlow.ActionItemReviewerRevert">
+        <methods>
+          <include name="toActionItemRevert"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.ActionItemReviewerRevert -->
+      <class name="com.pss.dms.CCRejectionFlow.ActionItemApproveReject">
+        <methods>
+          <include name="setUp"/>
+          <include name="toActionItemApproveReject"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.ActionItemApproveReject -->
+      <class name="com.pss.dms.CCRejectionFlow.ActionItemPerformAfterReject">
+        <methods>
+          <include name="toActionItemPerformAfterReject"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.ActionItemPerformAfterReject -->
+    </classes>
+  </test> <!-- CCWithDMSAndLMS ActionItemPerformandReview(failed) -->
+  <test thread-count="5" name="CCWithDMSAndLMS ActionItemReviewAndApprove(failed)">
+    <classes>
+      <class name="com.pss.dms.CCRejectionFlow.ActionItemReview">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testIT"/>
+          <include name="toActionItemReview"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.ActionItemReview -->
+      <class name="com.pss.dms.CCRejectionFlow.CCClosureReview">
+        <methods>
+          <include name="toCCClosureReview"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.CCClosureReview -->
+      <class name="com.pss.dms.CCRejectionFlow.ActionItemPerformAfterReject">
+        <methods>
+          <include name="toActionItemPerformAfterReject"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.ActionItemPerformAfterReject -->
+      <class name="com.pss.dms.CCRejectionFlow.ActionItemApprove">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="toActionItemApprove"/>
+          <include name="testIT"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.ActionItemApprove -->
+    </classes>
+  </test> <!-- CCWithDMSAndLMS ActionItemReviewAndApprove(failed) -->
+  <test thread-count="5" name="CCWithDMSAndLMS CCClosure ReviewAndApprove(failed)">
+    <classes>
+      <class name="com.pss.dms.CCRejectionFlow.CCclosureApprove">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testIT"/>
+          <include name="toCCClosureApprove"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.CCclosureApprove -->
+      <class name="com.pss.dms.CCRejectionFlow.CCclosureApproveRevert">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="toClosureApproveReject"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.CCclosureApproveRevert -->
+      <class name="com.pss.dms.CCRejectionFlow.CCClosureReview">
+        <methods>
+          <include name="toCCClosureReview"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.pss.dms.CCRejectionFlow.CCClosureReview -->
+    </classes>
+  </test> <!-- CCWithDMSAndLMS CCClosure ReviewAndApprove(failed) -->
+</suite> <!-- Failed suite [com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT] -->

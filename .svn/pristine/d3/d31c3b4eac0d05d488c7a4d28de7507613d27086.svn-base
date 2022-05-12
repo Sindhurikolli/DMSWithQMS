@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    <!--
+    see examples at http://testng.org/doc/documentation-main.html#testng-xml
+
+    <suite-files>
+        <suite-file path="./junit-suite.xml" />
+    </suite-files>
+
+    <test name="TimeOut">
+        <classes>
+            <class name="test.timeout.TimeOutTest" />
+            <class name="test.timeout.TimeOutFromXmlTest"/>
+            <class name="test.timeout.TimeOutThreadLocalSampleTest"/>
+        </classes>
+    </test>
+    -->
+    
+    <test name="DmsDoctSTPWithoutCmtsThreeStgsFlow">
+        <!--        <packages>
+            <package name=".*"/>
+        </packages>-->
+        
+        <classes>
+<!--            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.CreateTemplateSTPDoctDms"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.TemplateApprovalSTPDoctDms"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.CreateWorkFlowDmsDoctSTPPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.ApprovalWorkFlowSTPDoctDms"/>-->
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.CreateDocumentRequestSTP"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.ApprovalDoctRequestSTP"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.NewDoctSTPInitiatePositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.DeptReviewerSTPInitiate"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.QAReviewerSTPInitiateDoctDms"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.CFTReviewerSTPInitiateDoctDms"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.TrngNotificationListSTPDoctDms"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.ApprovalTrngNotifyListSTP"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.TrngCompletedSTPPositive"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.MasterListDoctSTPPositiveFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDoctSTPPositiveFlow.DocumentViewSTPPositiveFlow"/>
+        </classes>
+    </test>
+
+</suite>

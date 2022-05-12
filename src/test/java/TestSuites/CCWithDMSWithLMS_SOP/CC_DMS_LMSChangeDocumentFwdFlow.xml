@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+  <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+        <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+</listeners> 
+     <parameter name="DocumentType" value="${DocumentType}"/>
+     <parameter name="ProductCode" value="${ProductCode}"/>  
+     <parameter name="ADHOC_SCHEDULE_NAME" value="${ADHOC_SCHEDULE_NAME}"/>
+     
+      <test name="DMS Properties File Update">
+        <classes>
+           <class name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties"> 
+          	<methods>
+				<!-- <include name="ChangeDocument"/> --> 
+				<include name="ScheduleName"/>
+			</methods>
+			</class>
+        </classes>
+    </test>      
+  <test name="CCWithDMS CC InitiationToApprove">
+        <classes>
+           <class name="com.pss.dms.CCFWD.CCInitiation"/>   
+           <class name="com.pss.dms.CCFWD.DeptReviewerCC"/> 
+           <class name="com.pss.dms.CCFWD.QAReviewerCC"/>
+           <class name="com.pss.dms.CCFWD.CFTReviewCC"/>
+           <class name="com.pss.dms.CCFWD.RegReviewerCC"/>
+           <class name="com.pss.dms.CCFWD.CustomerNotification"/>
+           <class name="com.pss.dms.CCFWD.CustomerResponse"/>
+           <class name="com.pss.dms.CCFWD.QAReReviewCC"/>
+           <class name="com.pss.dms.CCFWD.QAApproverCC"/> 
+ </classes>
+    </test>
+ 	 <test name="CCWithDMS CC PostApprovalAction InitiateToApprove">
+        <classes>            
+           <class name="com.pss.dms.CCFWD.PostApprovalActionInitiateChangeDocument"/>
+           <class name="com.pss.dms.CCFWD.PostApprovalActionReview"/>
+           <class name="com.pss.dms.CCFWD.PostApprovalActionApproval"/>
+        </classes>
+  </test> 
+     <test name="DMSWithLMS">
+        <classes>
+        
+ 		   <class name="com.pss.dms.DMSFWD.ChangeDoctInitiate"/>   
+           <class name="com.pss.dms.DMSFWD.ChangeDeptReviewer"/>  
+           <class name="com.pss.dms.DMSFWD.ChangeQAApprover"/> 
+           <class name="com.pss.dms.DMSFWD.ChangeTrainingNotificatiomList"/> 
+           <class name="com.pss.dms.LMSFWD.CreateTopic"/> 
+      	   <class name="com.pss.dms.LMSFWD.CreateTopicQuestions"/>
+           <class name="com.pss.dms.LMSFWD.ModifyTrainer"/> 
+           <class name="com.pss.dms.LMSFWD.AdhocSchedule"/> 
+           <class name="com.pss.dms.LMSFWD.AdhocScheduleApproval"/>
+           <class name="com.pss.dms.LMSFWD.AssignTrainerAndVenue"/>
+           <class name="com.pss.dms.LMSFWD.TrainingAttendence"/> 
+           <class name="com.pss.dms.LMSFWD.QuestionPaper"/>
+           <class name="com.pss.dms.LMSFWD.EvaluateQuestions"/> 
+           <class name="com.pss.dms.LMSFWD.NotifyDocController"/>
+           <class name="com.pss.dms.DMSFWD.ChangeTrainingCompletedList"/>   
+        </classes>
+    </test>
+     <test name="CCWithDMS CC AIPerformToApprove">
+        <classes>           
+           
+           <class name="com.pss.dms.CCFWD.ActionItemPerform"/>
+           <class name="com.pss.dms.CCFWD.ActionItemReview"/>
+           <class name="com.pss.dms.CCFWD.ActionItemApprove"/>
+  </classes>
+    </test>
+ <test name="CCWithDMS CC ClosureReviewtoApprove">
+        <classes>           
+           <class name="com.pss.dms.CCFWD.CCclosureReview"/>
+           <class name="com.pss.dms.CCFWD.CCclosureApprove"/>
+           
+           
+        </classes>
+  </test>
+  
+  <!-- <test name = "exclude Test">
+    <classes>     
+    <class name="com.pss.dms.LMSFWD.MyTrainings"/>
+     <class name="com.pss.dms.DMSFWD.ChangeQAReviewer"/>
+           <class name="com.pss.dms.DMSFWD.ChangeCFTReviewer"/> 
+         <class name="com.pss.dms.DMSFWD.ChangeCQAApprover"/> 
+   </classes>
+  </test> -->
+  
+</suite>

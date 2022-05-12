@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+   <listeners> 
+        <listener class-name="com.pss.dms.Listerners.TestListener"/>
+        <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
+</listeners> 
+  <!-- 	<parameter name="DOCUMENT_NAME_SOP_DOCT_REQUEST" value="${DOCUMENT_NAME_SOP_DOCT_REQUEST}"/>
+	<parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="${DOCT_NO_INITIATE_NEW_DOCT_SOP}"/>
+	
+	
+  <test name="DMS PropertiesUpdate">
+    <classes>           
+           <class name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties">
+          <methods>
+				<include name="ChangeDocument"/>
+		</methods>
+          	</class>
+	</classes>
+ </test>   -->      
+   
+<test name="DMS Change Doc Request">
+        <classes>           
+           <class name="com.pss.dms.DMSFWD.ChangeDocumentRequest"/>  
+           <class name="com.pss.dms.DMSFWD.ChangeDocumentRequestApproval"/> 
+           
+</classes>
+    </test>
+    <test name="DMS InitiationtoApprove">
+        <classes>           
+           <class name="com.pss.dms.DMSFWD.ChangeDoctInitiate"/>   
+           <class name="com.pss.dms.DMSFWD.ChangeDeptReviewer"/> 
+           <class name="com.pss.dms.DMSFWD.ChangeQAReviewer"/>
+           <class name="com.pss.dms.DMSFWD.ChangeCFTReviewer"/>
+           <class name="com.pss.dms.DMSFWD.ChangeQAApprover"/>
+           <class name="com.pss.dms.DMSFWD.ChangeCQAApprover"/>
+</classes>
+    </test>
+ <test name="DMS TrainingNotificationToCompletion">
+        <classes>             
+            <class name="com.pss.dms.DMSFWD.ChangeNoTrainingNotificationList"/> 
+           <class name="com.pss.dms.DMSFWD.ChangeDocTrainingApproval"/>
+           <class name="com.pss.dms.DMSFWD.ChangeTrainingCompletedList"/> 
+        </classes>
+    </test>
+ 
+</suite>

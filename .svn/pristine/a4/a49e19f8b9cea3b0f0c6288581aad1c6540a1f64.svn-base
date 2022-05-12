@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="com.mycompany_DmsSeleniumMavenApp_jar_1.0-SNAPSHOT">
+
+    <!--
+    see examples at http://testng.org/doc/documentation-main.html#testng-xml
+
+    <suite-files>
+        <suite-file path="./junit-suite.xml" />
+    </suite-files>
+
+    <test name="TimeOut">
+        <classes>
+            <class name="test.timeout.TimeOutTest" />
+            <class name="test.timeout.TimeOutFromXmlTest"/>
+            <class name="test.timeout.TimeOutThreadLocalSampleTest"/>
+        </classes>
+    </test>
+    -->
+    
+    <test name="DmsDocSOPRejectedFlowWithCmtsFiveStgs">
+<!--        <packages>
+            <package name=".*"/>
+        </packages>-->
+        <classes>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.CreateDoctRequestSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.ApprovalDoctRequestSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.NewDoctSOPInitiateRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.DeptReviewerSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.QAReviewerSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctInitiateSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocDeptReviewerSOP"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocQAReviewerSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDocCFTReviewSOPRejectflow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctQAApproverSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctCQAApproverSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.TrngNotificationListSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.RejectedDoctTrainingApprovalSOPRejectedFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.TrngCompletedListSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.MasterDoctListSOPRejectFlow"/>
+            <class name="com.pss.dms.Initiation.DmsDocSOPNegativeFlow.DoctViewSOPRejectFlow"/>
+        </classes> 
+    </test>
+
+</suite>
