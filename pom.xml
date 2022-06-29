@@ -14,11 +14,11 @@
 
 		<jre.level>1.8</jre.level>
 		<jdk.level>1.8</jdk.level>
-		<ADMINURL>http://192.168.0.122:8096/ADMIN</ADMINURL>
-		<DMSURL>http://192.168.0.122:8097/DMS</DMSURL>
-		<QMSLoginUrl>http://192.168.0.113:8098/QMS</QMSLoginUrl>
-		<LMSURL>http://192.168.0.122:8097/LMS</LMSURL>
-		<QMSRegistrationURL>http://192.168.0.122:8096/REGISTRATION/Login.do</QMSRegistrationURL>
+		<ADMINURL>http://192.168.0.107:4040/ADMIN/Login.do</ADMINURL>
+		<DMSURL>http://192.168.0.100:4041/DMS</DMSURL>
+		<QMSLoginUrl>http://192.168.0.101:4042/QMS</QMSLoginUrl>
+		<LMSURL>http://192.168.0.100:4041/LMS</LMSURL>
+		<QMSRegistrationURL>http://192.168.0.107:4040/REGISTRATION/Login.do</QMSRegistrationURL>
 		<DOCUMENT_NAME_SOP_DOCT_REQUEST>Document</DOCUMENT_NAME_SOP_DOCT_REQUEST>
 		<DocumentType>SOP</DocumentType>
 		<ProductCode>P1</ProductCode>
