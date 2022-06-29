@@ -49,7 +49,8 @@ public class FirstTimeUserLogin extends AdminLoginDetails {
 		input = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		Thread.sleep(1000);
 //			driver.findElement(By.linkText("LOGIN")).click();
-		driver.findElement(By.xpath("//*[@id=\"loginform\"]/div[3]/button[1]")).click();
+//		driver.findElement(By.xpath("//*[@id=\"loginform\"]/div[3]/button[1]")).click();
+		driver.findElement(By.cssSelector("button[type='submit']")).click();
 		Thread.sleep(3000);
 		im = Image.getInstance(input);
 		im.scaleToFit((PageSize.A4.getWidth() - (PageSize.A4.getWidth() / 8)),
