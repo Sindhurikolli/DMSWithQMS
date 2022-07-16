@@ -90,9 +90,9 @@ public class DmsDocumentTreeCreate extends QMSLoginDetails {
 		jse.executeScript("window.scrollBy(0,2200)");
 
 		WebDriverWait wait1 = new WebDriverWait(driver, 60);
-		wait1.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='DmsRolesRegForm.do']")));
+		wait1.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[onclick='redirectToDmsAdminTab()']")));
 		sno++;
-		driver.findElement(By.cssSelector("a[href='DmsRolesRegForm.do']")).click();
+		driver.findElement(By.cssSelector("a[onclick='redirectToDmsAdminTab()']")).click();
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Admin menu", sno, false);
 		Thread.sleep(2000);
 		if (driver.findElement(By.id("NotificationTableContainer")).isDisplayed()) {

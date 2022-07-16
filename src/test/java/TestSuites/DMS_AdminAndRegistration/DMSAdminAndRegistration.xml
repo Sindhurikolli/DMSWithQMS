@@ -9,8 +9,8 @@
  <test name="DMS Admin">
       <classes>           
         <class name="com.pss.dms.DmsAdmin.MultiDocumentTreeCreationAndApproveTest"/>  
-        <class name="com.pss.dms.DmsAdmin.MultiDmsPrivilegesTest"/> 
-        <class name="com.pss.dms.DmsAdmin.DmsUserGroup"/>
+        <class name="com.pss.dms.DmsAdmin.MultiDmsPrivilegesTest"/>
+        <class name="com.pss.dms.DmsAdmin.DmsUserGroup"/> 
         
 	 </classes>
 </test>  

@@ -30,10 +30,9 @@
         <classes>           
            <class name="com.pss.dms.DMSFWD.ChangeDoctInitiate"/>   
            <class name="com.pss.dms.DMSFWD.ChangeDeptReviewer"/> 
-           <class name="com.pss.dms.DMSFWD.ChangeQAReviewer"/>
-           <class name="com.pss.dms.DMSFWD.ChangeCFTReviewer"/>
+           <class name="com.pss.dms.DMSFWD.ChangeQAReviewer"/>          
            <class name="com.pss.dms.DMSFWD.ChangeQAApprover"/>
-           <class name="com.pss.dms.DMSFWD.ChangeCQAApprover"/>
+          
 </classes>
     </test>
  <test name="DMS TrainingNotificationToCompletion">
@@ -43,5 +42,16 @@
            <class name="com.pss.dms.DMSFWD.ChangeTrainingCompletedList"/> 
         </classes>
     </test>
- 
+    
+    
+    
+    
+    
+    
+  <!--  <test name = "exclude">
+   
+     <class name="com.pss.dms.DMSFWD.ChangeCFTReviewer"/>
+     <class name="com.pss.dms.DMSFWD.ChangeCQAApprover"/>
+     
+  </test>  --> 
 </suite>

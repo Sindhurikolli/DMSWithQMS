@@ -13,7 +13,7 @@
      <parameter name="ProductCode" value="${ProductCode}"/>  
      
   
-    <test name="DMS Properties File Update">
+   <!--  <test name="DMS Properties File Update">
         <classes>
           <class name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties"> 
           	<methods>
@@ -21,7 +21,7 @@
 			</methods>
 			</class>
         </classes>
-    </test>   
+    </test>    -->
     <test name="CCWithDMS CC InitiationToApprove">
         <classes>
            <class name="com.pss.dms.CCFWD.CCInitiation"/>    
