@@ -84,7 +84,7 @@ public class DMSDocumentTrainingApprovalReject extends QMSLoginDetails {
 		Thread.sleep(2000);
 //			driver.findElement(By.cssSelector("a[href='dmsNewDocRequestApp.do']")).click();
 //		    document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on document training sub menu", sno,false);
-		WebDriverWait wait1 = new WebDriverWait(driver, 60);
+		WebDriverWait wait1 = new WebDriverWait(driver, 120);
 		wait1.until(ExpectedConditions.elementToBeClickable(By.id("docTrainingApprovalList")));
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -104,8 +104,7 @@ public class DMSDocumentTrainingApprovalReject extends QMSLoginDetails {
 			Actions action = new Actions(driver);
 			action.sendKeys(Keys.ESCAPE).perform();
 		}
-		wait1.until(ExpectedConditions.presenceOfElementLocated(
-				By.cssSelector("#dmsDocumentTrngAppTable > div > div.jtable-busy-message[style='display: none;']")));
+		wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#dmsDocumentTrngAppTable > div > div.jtable-busy-message[style='display: none;']")));
 		methodToDoSelectTrngApprovalSOPRejectedFlow();
 		document.close();
 		writer.close();
@@ -178,11 +177,11 @@ public class DMSDocumentTrainingApprovalReject extends QMSLoginDetails {
 			if ((totalNoOfRecords > 1)
 					&& ((doctNameTrngApprovalSOP == null) || ("".equalsIgnoreCase(doctNameTrngApprovalSOP)))) {
 				doctNameTrngApprovalSOP = driver
-						.findElement(By.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr[1]/td[2]"))
+						.findElement(By.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr[1]/td[3]"))
 						.getText();// documentType
 			} else if ((doctNameTrngApprovalSOP == null) || ("".equalsIgnoreCase(doctNameTrngApprovalSOP))) {
 				doctNameTrngApprovalSOP = driver
-						.findElement(By.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr/td[2]"))
+						.findElement(By.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr/td[3]"))
 						.getText();// documentType
 			}
 			++count;
@@ -193,11 +192,11 @@ public class DMSDocumentTrainingApprovalReject extends QMSLoginDetails {
 					for (int i = 1; i <= perPageNoOfRecordsPresent; i++) {
 						String newDoctReqNameInApproval = driver
 								.findElement(By.xpath(
-										"//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr[" + i + "]/td[2]"))
+										"//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr[" + i + "]/td[3]"))
 								.getText();// documentTypeName
 						if (doctNameTrngApprovalSOP.equalsIgnoreCase(newDoctReqNameInApproval)) {
 							driver.findElement(By
-									.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr[" + i + "]/td[2]"))
+									.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr[" + i + "]/td[3]"))
 									.click();
 							isRecordSelectedTrngApprovalSOP = true;
 							break;
@@ -208,10 +207,10 @@ public class DMSDocumentTrainingApprovalReject extends QMSLoginDetails {
 					}
 				} else {
 					String newDoctReqNameInApproval = driver
-							.findElement(By.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr/td[2]"))
+							.findElement(By.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr/td[3]"))
 							.getText();
 					if (doctNameTrngApprovalSOP.equalsIgnoreCase(newDoctReqNameInApproval)) {
-						driver.findElement(By.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr/td[2]"))
+						driver.findElement(By.xpath("//*[@id=\"dmsDocumentTrngAppTable\"]/div/table/tbody/tr/td[3]"))
 								.click();
 						isRecordSelectedTrngApprovalSOP = true;
 						break;

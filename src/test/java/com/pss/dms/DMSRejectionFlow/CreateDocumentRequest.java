@@ -135,7 +135,8 @@ public class CreateDocumentRequest extends QMSLoginDetails {
 		driver.findElement(By.id("treeContainer_2_switch")).click();
 		Thread.sleep(3000);
 		sno++;
-		driver.findElement(By.id("treeContainer_3_span")).click();
+//		driver.findElement(By.id("treeContainer_3_span")).click();
+		driver.findElement(By.linkText(properties.getProperty("DocumentLocation"))).click();
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Select the location", sno, false);
 		Thread.sleep(4000);
 		sno++;

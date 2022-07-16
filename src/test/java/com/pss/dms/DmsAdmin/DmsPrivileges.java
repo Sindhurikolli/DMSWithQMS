@@ -91,9 +91,9 @@ public class DmsPrivileges extends QMSLoginDetails {
 		jse.executeScript("window.scrollBy(0,2500)");
 
 		WebDriverWait wait1 = new WebDriverWait(driver, 60);
-		wait1.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='DmsRolesRegForm.do']")));
+		wait1.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[onclick='redirectToDmsAdminTab()']")));
 		sno++;
-		driver.findElement(By.cssSelector("a[href='DmsRolesRegForm.do']")).click();
+		driver.findElement(By.cssSelector("a[onclick='redirectToDmsAdminTab()']")).click();
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Admin menu", sno, false);
 		Thread.sleep(2000);
 		if (driver.findElement(By.id("NotificationTableContainer")).isDisplayed()) {
@@ -174,15 +174,15 @@ public class DmsPrivileges extends QMSLoginDetails {
 			sno++;
 			Thread.sleep(2000);
 			WebDriverWait wait = new WebDriverWait(driver, 60);
-//            wait.until(ExpectedConditions.presenceOfElementLocated(By.id("eSignPwdInWnd")));
-//            driver.findElement(By.id("eSignPwdInWnd")).sendKeys(properties.getProperty("ESIGN_PASSPWD"));
-//            document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter the E-Signatue", sno,false);
-//            Thread.sleep(1000);
-//            sno++;
-//            driver.findElement(By.id("subBtnInValidateESign")).click();
-//            document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on submit button", sno,false);
-//            Thread.sleep(1000);
-//            sno++;
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.id("eSignPwdInWnd")));
+            driver.findElement(By.id("eSignPwdInWnd")).sendKeys(properties.getProperty("ESIGN_PASSPWD"));
+            document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter the E-Signatue", sno,false);
+            Thread.sleep(1000);
+            sno++;
+            driver.findElement(By.id("subBtnInValidateESign")).click();
+            document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on submit button", sno,false);
+            Thread.sleep(1000);
+            sno++;
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.className("modal-btn")));
 			Thread.sleep(1000);
 			driver.findElement(By.className("modal-btn")).click();

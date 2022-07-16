@@ -58,8 +58,7 @@ public class Helper {
 	}
 
 	// Single Approval(Document Tree & Document Type & WorkFlow Users)
-	public static boolean selectSingleApprovalRecord(WebDriver driver, String selectingUserSingleApproval,
-			boolean isRecordSelected, int count) throws InterruptedException {
+	public static boolean selectSingleApprovalRecord(WebDriver driver, String selectingUserSingleApproval, boolean isRecordSelected, int count) throws InterruptedException {
 		WebElement table = driver.findElement(By.id("approversTableContainer"));// Single Selection User Table
 		WebElement tableBody = table.findElement(By.tagName("tbody"));
 		int perPageNoOfRecordsPresent = tableBody.findElements(By.tagName("tr")).size();
@@ -67,8 +66,8 @@ public class Helper {
 		int noOfRecordsChecked = 0;
 		if (perPageNoOfRecordsPresent > 0) {
 //            String a = driver.findElement(By.className("jtable-page-info")).getText();// For Ex: Showing 1-1 of 1
-			String a = driver.findElement(By.xpath("//*[@id=\"approversTableContainer\"]/div/div[4]/div[2]/span"))
-					.getText().toString();// For Ex: Showing 1-1 of 1
+			String a = driver.findElement(By.xpath("//*[@id=\"approversTableContainer\"]/div/div[4]/div[2]/span")).getText();// For Ex: Showing 1-1 of 1
+			System.out.println(a);
 			String[] parts = a.split(" of ");
 			totalNoOfRecords = Integer.parseInt(parts[1].trim());
 		}
