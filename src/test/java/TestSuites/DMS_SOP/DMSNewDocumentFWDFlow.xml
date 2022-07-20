@@ -12,10 +12,10 @@
 	<parameter name="ProductCode" value="${ProductCode}"/>
 	<parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="${DOCT_NO_INITIATE_NEW_DOCT_SOP}"/>
 	
-	<!-- <parameter name="DOCUMENT_NAME_SOP_DOCT_REQUEST" value="Document_20101"/>
+	<parameter name="DOCUMENT_NAME_SOP_DOCT_REQUEST" value="Document_20101"/>
 	<parameter name="DocumentType" value="SOP"/>
 	<parameter name="ProductCode" value="P1"/>
-	<parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="D20101"/> -->
+	<parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="D20101"/>
 	
  <test name="DMS PropertiesUpdate">
     <classes>           
@@ -37,11 +37,10 @@
  <test name="DMS InitiationtoApprove">
         <classes>           
            <class name="com.pss.dms.DMSFWD.NewDocumentInitiation"/>
-           <class name="com.pss.dms.DMSFWD.DMSDeptReviewer"/>  
-           <class name="com.pss.dms.DMSFWD.DMSQAReviewer"/> 
-           <class name="com.pss.dms.DMSFWD.DMSCFTReviewer"/>
+           <class name="com.pss.dms.DMSFWD.DMSDeptReviewer"/>   
+           <class name="com.pss.dms.DMSFWD.DMSQAReviewer"/>         
            <class name="com.pss.dms.DMSFWD.DMSQAApprover"/> 
-           <class name="com.pss.dms.DMSFWD.DMSCQAApprover"/> 
+           
            
 		</classes>
  </test> 
@@ -52,5 +51,12 @@
            <class name="com.pss.dms.DMSFWD.TrainingCompletedList"/> 
         </classes>
     </test>
+    
+   <!--  <test name = "exclude">
+   
+     <class name="com.pss.dms.DMSFWD.DMSCFTReviewer"/>
+     <class name="com.pss.dms.DMSFWD.DMSCQAApprover"/> 
+     
+  </test>  --> 
 
 </suite>

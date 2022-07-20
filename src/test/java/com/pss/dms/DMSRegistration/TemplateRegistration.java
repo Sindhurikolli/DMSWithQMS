@@ -158,10 +158,9 @@ public class TemplateRegistration extends QMSLoginDetails {
 		driver.findElement(By.id("locationTreeForApproverSelect_1_span")).click();
 		sno++;
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "click on Select Location", sno, false);
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		String userName = properties.getProperty("DMSTrainingApprover_E_CODE");
-		isRecordSelectedSingleApprovalTempSTP = Helper.selectSingleApprovalRecord(driver, userName,
-				isRecordSelectedSingleApprovalTempSTP, count);
+		isRecordSelectedSingleApprovalTempSTP = Helper.selectSingleApprovalRecord(driver, userName, isRecordSelectedSingleApprovalTempSTP, count);
 		Thread.sleep(1000);
 		if (isRecordSelectedSingleApprovalTempSTP) {
 			sno++;

@@ -45,10 +45,37 @@
            <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/>
            <class name="com.pss.dms.DMSRejectionFlow.DMSDeptReviewer"/>
            <class name="com.pss.dms.DMSRejectionFlow.DMSQAReviewer"/> 
-           <class name="com.pss.dms.DMSRejectionFlow.DMScftReviewerReject"/>
+          
             </classes>
     </test>  
-	 <test name="DMSQAReviewtoCFTApprove">
+	 
+	  <test name="DMSQAApprover">
+        <classes>
+       		<class name="com.pss.dms.DMSRejectionFlow.DMSQAApproverReject"/> 
+           <class name="com.pss.dms.DMSRejectionFlow.DMSQAReviewer"/>          
+           <class name="com.pss.dms.DMSRejectionFlow.DMSQAApprover"/>          
+           </classes>
+   </test> 
+   
+   
+	  <test name="DMS TrainingNotificationToComplete">
+        <classes>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSNoTrainingNotificationList"/>  
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDocumentTrainingApprovalReject"/>
+           <class name="com.pss.dms.DMSRejectionFlow.RejectedDocumentTrainingNotificationAfterReject"/>
+           <class name="com.pss.dms.DMSRejectionFlow.DMSDocumentTrainingApproval"/>
+           <class name="com.pss.dms.DMSRejectionFlow.TrainingCompletedList"/>
+         </classes>
+    </test> 
+    
+     <!--  <test name = "exclude">
+   
+      <class name="com.pss.dms.DMSRejectionFlow.DMScftReviewerReject"/>
+     
+     
+  </test>  
+  
+  <test name="DMSQAReviewtoCFTApprove">
         <classes>
            <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/> 
            <class name="com.pss.dms.DMSRejectionFlow.DMSDeptReviewer"/>
@@ -57,18 +84,11 @@
           
             </classes>
     </test>
-	  <test name="DMSQAApprover">
-        <classes>
-       		<class name="com.pss.dms.DMSRejectionFlow.DMSQAApproverReject"/>
-           <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/>
+    
+     <class name="com.pss.dms.DMSRejectionFlow.DMScftReviewer"/>
+      <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/>
            <class name="com.pss.dms.DMSRejectionFlow.DMSDeptReviewer"/>
-           <class name="com.pss.dms.DMSRejectionFlow.DMSQAReviewer"/>
-           <class name="com.pss.dms.DMSRejectionFlow.DMScftReviewer"/>
-           <class name="com.pss.dms.DMSRejectionFlow.DMSQAApprover"/>
-           
-           </classes>
-   </test> 
-    <test name="DMSCQAApprover">
+      <test name="DMSCQAApprover">
         <classes>
        		<class name="com.pss.dms.DMSRejectionFlow.DMSCQAApproverReject"/>
            <class name="com.pss.dms.DMSRejectionFlow.DMSReInitiateDocument"/>
@@ -79,14 +99,5 @@
            <class name="com.pss.dms.DMSRejectionFlow.DMSCQAApprover"/>
            </classes>
    </test> 
-   
-	  <test name="DMS TrainingNotificationToComplete">
-        <classes>
-           <class name="com.pss.dms.DMSRejectionFlow.DMSNoTrainingNotificationList"/> 
-           <class name="com.pss.dms.DMSRejectionFlow.DMSDocumentTrainingApprovalReject"/>
-           <class name="com.pss.dms.DMSRejectionFlow.RejectedDocumentTrainingNotificationAfterReject"/>
-           <class name="com.pss.dms.DMSRejectionFlow.DMSDocumentTrainingApproval"/>
-           <class name="com.pss.dms.DMSRejectionFlow.TrainingCompletedList"/>
-         </classes>
-    </test> 
+  --> 
 </suite>

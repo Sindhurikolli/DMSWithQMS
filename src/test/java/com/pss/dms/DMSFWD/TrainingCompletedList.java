@@ -92,8 +92,8 @@ public class TrainingCompletedList extends QMSLoginDetails {
 		WebDriverWait wait1 = new WebDriverWait(driver, 60);
 		wait1.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='dmsTrngCmpltdListPage.do']")));
 		Thread.sleep(5000);
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,500)");
+//		JavascriptExecutor jse = (JavascriptExecutor) driver;
+//		jse.executeScript("window.scrollBy(0,500)");
 //			WebElement element = driver.findElement(By.xpath("//*[@id=\"dmsDocumentTraining\"]/div/div[1]/strong"));
 //			 jse.executeScript("arguments[0].scrollIntoView(true);", element);
 
