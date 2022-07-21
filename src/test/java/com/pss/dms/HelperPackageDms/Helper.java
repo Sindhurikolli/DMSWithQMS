@@ -9,7 +9,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -31,7 +34,12 @@ public class Helper {
 		Select dropDownList = new Select(webElementForSelect);
 		return dropDownList;
 	}
-
+	public static void waitLoadRecords(WebDriver driver, By byObj) throws InterruptedException {
+		Thread.sleep(500);
+		WebDriverWait wait1 = new WebDriverWait(driver, 280);
+		wait1.until(ExpectedConditions.presenceOfElementLocated(byObj));
+		Thread.sleep(500);
+	}
 	public static void scrollElement(WebDriver driver, By byObj) throws InterruptedException {
 
 		WebElement element = driver.findElement(byObj);
