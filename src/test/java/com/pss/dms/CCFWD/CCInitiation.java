@@ -28,10 +28,12 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.pss.dms.HelperPackageDms.Helper;
 import com.pss.dms.login.QMSLoginDetails;
 import com.pss.dms.util.HeaderFooterPageEvent;
 import com.pss.dms.util.Utilities;
 import com.pss.qms.ExtentTestNGPkg.Utility;
+
 
 //@Listeners(com.pss.qms.Listners.TestListenerCC.class)
 public class CCInitiation extends QMSLoginDetails {
@@ -193,7 +195,8 @@ public class CCInitiation extends QMSLoginDetails {
 		Thread.sleep(5000);
 		sno++;
 //        driver.findElement(By.xpath("//*[@id=\"content\"]/div[8]/div[1]/div[2]/label")).click();
-		driver.findElement(By.id("suppDocYesInCcInit")).click();
+//		driver.findElement(By.id("suppDocYesInCcInit")).click();
+		Helper.clickElement(driver, By.id("suppDocYesInCcInit"));
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Supporting documents ", sno,
 				false);
 		Thread.sleep(4000);
