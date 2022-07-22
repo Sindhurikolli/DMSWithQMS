@@ -210,6 +210,7 @@ public class CreateNewDocumentRequest extends QMSLoginDetails {
 		Thread.sleep(4000);
 		sno++;
 		String userName = properties.getProperty("DMSTrainingApprover_E_CODE");
+		Helper.waitLoadRecords(driver, By.cssSelector("#approversTableContainer > div > div.jtable-busy-message[style='display: none;']"));
 		isRecordSelectedSingleApprovalDoctReqSOP = Helper.selectSingleApprovalRecord(driver, userName,
 				isRecordSelectedSingleApprovalDoctReqSOP, count);
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Select the Approve from record", sno,
