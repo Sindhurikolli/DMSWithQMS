@@ -103,7 +103,8 @@ public class AssignTrainerAndVenue extends QMSLoginDetails {
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Location", sno, false);
 		Thread.sleep(2000);
 		sno++;
-		driver.findElement(By.id("locSelTree_3_span")).click();// Selecting the location Tree
+//		driver.findElement(By.id("locSelTree_3_span")).click();// Selecting the location Tree
+		driver.findElement(By.linkText(properties.getProperty("ScheduleLocation"))).click();
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Location", sno, false);
 		Thread.sleep(2000);
 		sno++;

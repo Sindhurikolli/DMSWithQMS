@@ -109,7 +109,8 @@ public class AdhocSchedule extends QMSLoginDetails {
 		WebDriverWait wait1 = new WebDriverWait(driver, 240);
 		wait1.until(ExpectedConditions.elementToBeClickable(By.id("locSelTree_3_span")));
 		sno++;
-		driver.findElement(By.id("locSelTree_3_span")).click();
+//		driver.findElement(By.id("locSelTree_3_span")).click();
+		driver.findElement(By.linkText(properties.getProperty("ScheduleLocation"))).click();
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Location", sno, false);
 		Thread.sleep(2000);
 		sno++;
