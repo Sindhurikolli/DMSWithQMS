@@ -224,7 +224,8 @@ public class PostApprovalActionInitiate extends QMSLoginDetails {
 			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on + to Expand Location Tree", sno, false);
 			sno++;
 			Thread.sleep(5000);			
-			driver.findElement(By.id("docTreeInCCReview_3_span")).click();
+//			driver.findElement(By.id("docTreeInCCReview_3_span")).click();
+			driver.findElement(By.linkText(properties.getProperty("DocumentLocation"))).click();
 			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Location", sno, false);
 			sno++;
 			Thread.sleep(5000);			

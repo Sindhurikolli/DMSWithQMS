@@ -97,8 +97,8 @@ public class PostApprovalActionApproval extends QMSLoginDetails {
 //        driver.findElement(By.cssSelector("#ccPostAppActionsListId > ul > li:nth-child(2) > a")).click();
 //        document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on approval submenu", sno,false);
 		Thread.sleep(1000);
-		wait1.until(ExpectedConditions.presenceOfElementLocated(
-				By.cssSelector("#ccPostActionsApprovalTable > div > div.jtable-busy-message[style='display: none;']")));
+		Helper.waitLoadRecords(driver, By.cssSelector("#ccPostActionsApprovalTable > div > div.jtable-busy-message[style='display: none;']"));
+//		wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#ccPostActionsApprovalTable > div > div.jtable-busy-message[style='display: none;']")));
 		methodToDoPostApprovalActionApproval();
 		document.close();
 		writer.close();
