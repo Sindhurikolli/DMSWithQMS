@@ -172,7 +172,8 @@ public class AssignTrainerAndVenue extends QMSLoginDetails {
 			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Finish", sno, false);
 			Thread.sleep(4000);
 			sno++;
-			driver.findElement(By.xpath("/html/body/div[25]/div[3]/div/button[1]/span")).click();
+//			driver.findElement(By.linkText("Yes")).click();
+			driver.findElement(By.xpath("/html/body/div[27]/div[3]/div/button[1]/span")).click();
 			// driver.findElement(By.className("ui-button-text")).click();
 			/// html/body/div[25]/div[3]/div/button[1]
 			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Yes", sno, false);

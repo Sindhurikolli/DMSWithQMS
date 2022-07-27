@@ -23,6 +23,7 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.pss.dms.HelperPackageDms.Helper;
 import com.pss.dms.login.QMSLoginDetails;
 import com.pss.dms.util.HeaderFooterPageEvent;
 import com.pss.dms.util.Utilities;
@@ -87,8 +88,8 @@ public class QAReviewAfterApproveReject extends QMSLoginDetails {
 		driver.findElement(By.cssSelector("a[href='ccReviewPage.do']")).click();
 		
 		Thread.sleep(2000);
-		wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
-				"#changeControlReviewTableContainer > div > div.jtable-busy-message[style='display: none;']")));
+		Helper.waitLoadRecords(driver, By.cssSelector("#changeControlReviewTableContainer > div > div.jtable-busy-message[style='display: none;']"));
+//		wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#changeControlReviewTableContainer > div > div.jtable-busy-message[style='display: none;']")));
 		todoQAReviewAfterApproveReject();
 		document.close();
 		writer.close();
@@ -268,7 +269,7 @@ public class QAReviewAfterApproveReject extends QMSLoginDetails {
 					for (int i = 1; i <= perPageNoOfRecordsPresent; i++) {
 						JavascriptExecutor js2 = (JavascriptExecutor) driver;
 						WebElement ele2 = driver.findElement(By.xpath(
-								".//*[@id='changeControlReviewTableContainer']/div/table/tbody/tr[ " + i + "]/td[3]"));
+								"//*[@id='changeControlReviewTableContainer']/div/table/tbody/tr[ " + i + "]/td[3]"));
 						js2.executeScript("arguments[0].scrollIntoView(true);", ele2);
 						String CCNumberSequence = driver.findElement(By.xpath(
 								"//*[@id=\"changeControlReviewTableContainer\"]/div/table/tbody/tr[ " + i + " ]/td[3]"))
@@ -276,7 +277,7 @@ public class QAReviewAfterApproveReject extends QMSLoginDetails {
 						if (CCNumber.equalsIgnoreCase(CCNumberSequence)) {
 							JavascriptExecutor js = (JavascriptExecutor) driver;
 							WebElement ele = driver.findElement(
-									By.xpath(".//*[@id='changeControlReviewTableContainer']/div/table/tbody/tr[ " + i
+									By.xpath("//*[@id='changeControlReviewTableContainer']/div/table/tbody/tr[ " + i
 											+ "]/td[56]/button"));
 							js.executeScript("arguments[0].click();", ele);
 //							driver.findElement(
@@ -305,15 +306,17 @@ public class QAReviewAfterApproveReject extends QMSLoginDetails {
 				}
 				noOfRecordsChecked += perPageNoOfRecordsPresent;
 				if ((!isRecordSelected) && (noOfRecordsChecked < totalNoOfRecords)) {
-					WebElement element = driver.findElement(By.cssSelector(
-							"#changeControlReviewTableContainer > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next"));
-					JavascriptExecutor js = (JavascriptExecutor) driver;
-					js.executeScript("arguments[0].click();", element);
+//					WebElement element = driver.findElement(By.cssSelector(
+//							"#changeControlReviewTableContainer > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next"));
+//					JavascriptExecutor js = (JavascriptExecutor) driver;
+//					js.executeScript("arguments[0].click();", element);
+					Helper.clickElement(driver, By.cssSelector("#changeControlReviewTableContainer > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next"));
 
 					// driver.findElement(By.cssSelector("#changeControlReviewTableContainer > div >
 					// div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list >
 					// span.jtable-page-number-next")).click();//next page in Document approve list
 					Thread.sleep(3000);
+					Helper.waitLoadRecords(driver, By.cssSelector("#changeControlReviewTableContainer > div > div.jtable-busy-message[style='display: none;']"));
 					table = driver.findElement(By.id("changeControlReviewTableContainer"));// Document Tree approve
 																							// table
 					tableBody = table.findElement(By.tagName("tbody"));

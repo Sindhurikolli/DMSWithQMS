@@ -118,13 +118,13 @@ public class NotifyDocController extends QMSLoginDetails {
 			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Submit", sno, false);
 			Thread.sleep(3000);
 			sno++;
-//				driver.findElement(By.id("eSignPwdInWnd")).sendKeys(properties.getProperty("ESIGN_PASSPWD"));
-//				document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter E-Signature Password", sno,
-//						false);
-//				Thread.sleep(2000);
-//				sno++;
-//				driver.findElement(By.id("subBtnInValidateESign")).click();
-//				document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Submit", sno, false);
+				driver.findElement(By.id("eSignPwdInWnd")).sendKeys(properties.getProperty("ESIGN_PASSPWD"));
+				document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter E-Signature Password", sno,
+						false);
+				Thread.sleep(2000);
+				sno++;
+				driver.findElement(By.id("subBtnInValidateESign")).click();
+				document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Submit", sno, false);
 			Thread.sleep(3000);
 			WebDriverWait wait = new WebDriverWait(driver, 70);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.className("modal-btn")));
