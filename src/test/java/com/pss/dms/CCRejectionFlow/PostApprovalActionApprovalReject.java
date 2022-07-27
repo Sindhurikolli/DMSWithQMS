@@ -23,6 +23,7 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.pss.dms.HelperPackageDms.Helper;
 import com.pss.dms.login.QMSLoginDetails;
 import com.pss.dms.util.HeaderFooterPageEvent;
 import com.pss.dms.util.Utilities;
@@ -92,8 +93,8 @@ public class PostApprovalActionApprovalReject extends QMSLoginDetails {
 //        driver.findElement(By.cssSelector("#ccPostAppActionsListId > ul > li:nth-child(2) > a")).click();
 //        document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on approval submenu", sno,false);
 		Thread.sleep(2000);
-		wait1.until(ExpectedConditions.presenceOfElementLocated(
-				By.cssSelector("#ccPostActionsApprovalTable > div > div.jtable-busy-message[style='display: none;']")));
+		Helper.waitLoadRecords(driver, By.cssSelector("#ccPostActionsApprovalTable > div > div.jtable-busy-message[style='display: none;']"));
+//		wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#ccPostActionsApprovalTable > div > div.jtable-busy-message[style='display: none;']")));
 
 		todoPostApprovalActionApprovalReject();
 		document.close();
@@ -223,13 +224,11 @@ public class PostApprovalActionApprovalReject extends QMSLoginDetails {
 			while (noOfRecordsChecked < totalNoOfRecords) {
 				if (totalNoOfRecords > 1) {
 					for (int i = 1; i <= perPageNoOfRecordsPresent; i++) {
-						String CCNumberSequence = driver.findElement(By
-								.xpath("//*[@id=\"ccPostActionsApprovalTable\"]/div/table/tbody/tr[ " + i + " ]/td[5]"))
-								.getText();// documentTypeName
+						Helper.scrollElement(driver, By.xpath("//*[@id=\"ccPostActionsApprovalTable\"]/div/table/tbody/tr[ " + i + " ]/td[5]"));
+						String CCNumberSequence = driver.findElement(By.xpath("//*[@id=\"ccPostActionsApprovalTable\"]/div/table/tbody/tr[ " + i + " ]/td[5]")).getText();// documentTypeName
 						if (CCNumber.equalsIgnoreCase(CCNumberSequence)) {
-							driver.findElement(By.xpath(
-									".//*[@id='ccPostActionsApprovalTable']/div/table/tbody/tr[ " + i + " ]/td[5]"))
-									.click();
+							Helper.clickElement(driver, By.xpath("//*[@id='ccPostActionsApprovalTable']/div/table/tbody/tr[ " + i + " ]/td[5]"));
+//							driver.findElement(By.xpath("//*[@id='ccPostActionsApprovalTable']/div/table/tbody/tr[ " + i + " ]/td[5]")).click();
 							isRecordSelected = true;
 							break;
 						}
@@ -250,10 +249,10 @@ public class PostApprovalActionApprovalReject extends QMSLoginDetails {
 				}
 				noOfRecordsChecked += perPageNoOfRecordsPresent;
 				if ((!isRecordSelected) && (noOfRecordsChecked < totalNoOfRecords)) {
-					driver.findElement(By.cssSelector(
-							"#ccPostActionsApprovalTable > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next"))
-							.click();// next page in Document approve list
+					Helper.clickElement(driver, By.cssSelector("#ccPostActionsApprovalTable > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next"));
+//					driver.findElement(By.cssSelector("#ccPostActionsApprovalTable > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next")).click();// next page in Document approve list
 					Thread.sleep(3000);
+					Helper.waitLoadRecords(driver, By.cssSelector("#ccPostActionsApprovalTable > div > div.jtable-busy-message[style='display: none;']"));
 					table = driver.findElement(By.id("ccPostActionsApprovalTable"));// Document Tree approve table
 					tableBody = table.findElement(By.tagName("tbody"));
 					perPageNoOfRecordsPresent = tableBody.findElements(By.tagName("tr")).size();
