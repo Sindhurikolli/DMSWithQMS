@@ -27,19 +27,19 @@
             <class name="com.pss.dms.CCFWD.CCInitiation"/>             
             <class name="com.pss.dms.CCFWD.DeptReviewerCC"/>    
            <class name="com.pss.dms.CCFWD.QAReviewerCC"/>   
-           <class name="com.pss.dms.CCFWD.CFTReviewCC"/> 
+           <class name="com.pss.dms.CCFWD.CFTReviewCC"/>  
            <class name="com.pss.dms.CCFWD.RegReviewerCC"/>  
            <class name="com.pss.dms.CCFWD.CustomerNotification"/>
            <class name="com.pss.dms.CCFWD.CustomerResponse"/>   
            <class name="com.pss.dms.CCFWD.QAReReviewCC"/>
-          <class name="com.pss.dms.CCFWD.QAApproverCC"/> 
+          <class name="com.pss.dms.CCFWD.QAApproverCC"/>
  </classes>
     </test> 
   <test name="CCWithDMS CC PostApprovalAction InitiateToApprove">
         <classes>            
-           <class name="com.pss.dms.CCFWD.PostApprovalActionInitiate"/>  
-           <class name="com.pss.dms.CCFWD.PostApprovalActionReview"/> 
-          <class name="com.pss.dms.CCFWD.PostApprovalActionApproval"/> 
+           <class name="com.pss.dms.CCFWD.PostApprovalActionInitiate"/>   
+           <class name="com.pss.dms.CCFWD.PostApprovalActionReview"/>   
+          <class name="com.pss.dms.CCFWD.PostApprovalActionApproval"/>
         </classes>
   </test>
      <test name="DMSWithLMS Doc Initiate to Modify Trainer">
@@ -52,19 +52,19 @@
            <class name="com.pss.dms.DMSFWD.DMSTrainingNotificatiomList"/>           
            <class name="com.pss.dms.LMSFWD.CreateTopic"/> 
       	   <class name="com.pss.dms.LMSFWD.CreateTopicQuestions"/>    
-          <class name="com.pss.dms.LMSFWD.ModifyTrainer"/>
+          <class name="com.pss.dms.LMSFWD.ModifyTrainer"/> 
           </classes>
   </test>
      <test name="DMSWithLMS Adhoc Shedule to Training Completed">
         <classes>
             <class name="com.pss.dms.LMSFWD.AdhocSchedule"/> 
-          <class name="com.pss.dms.LMSFWD.AdhocScheduleApproval"/>  
+          <class name="com.pss.dms.LMSFWD.AdhocScheduleApproval"/>    
            <class name="com.pss.dms.LMSFWD.AssignTrainerAndVenue"/> 
             <class name="com.pss.dms.LMSFWD.TrainingAttendence"/>   
            <class name="com.pss.dms.LMSFWD.QuestionPaper"/> 
-           <class name="com.pss.dms.LMSFWD.EvaluateQuestions"/> 
+           <class name="com.pss.dms.LMSFWD.EvaluateQuestions"/>
            <class name="com.pss.dms.LMSFWD.NotifyDocController"/>
-           <class name="com.pss.dms.DMSFWD.TrainingCompletedList"/>     
+           <class name="com.pss.dms.DMSFWD.TrainingCompletedList"/>    
         </classes>
     </test>
     <test name="CCWithDMS CC AIPerformToApprove">
