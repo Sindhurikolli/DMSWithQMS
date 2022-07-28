@@ -46,10 +46,10 @@
         
            <class name="com.pss.dms.DMSFWD.NewDocumentInitiation"/>
            <class name="com.pss.dms.DMSFWD.DMSDeptReviewer"/>
-           <class name="com.pss.dms.DMSFWD.DMSQAReviewer"/>
-           <class name="com.pss.dms.DMSFWD.DMSCFTReviewer"/>
+           <class name="com.pss.dms.DMSFWD.DMSQAReviewer"/> 
+           
            <class name="com.pss.dms.DMSFWD.DMSQAApprover"/>
-           <class name="com.pss.dms.DMSFWD.DMSCQAApprover"/>
+           
            <class name="com.pss.dms.DMSFWD.DMSTrainingNotificatiomList"/>
            <class name="com.pss.dms.LMSFWD.CreateTopic"/>
       	   <class name="com.pss.dms.LMSFWD.CreateTopicQuestions"/>
@@ -62,7 +62,7 @@
            <class name="com.pss.dms.LMSFWD.QuestionPaper"/>
            <class name="com.pss.dms.LMSFWD.EvaluateQuestions"/> 
            <class name="com.pss.dms.LMSFWD.NotifyDocController"/>
-           <class name="com.pss.dms.DMSFWD.TrainingCompletedList"/>          
+           <class name="com.pss.dms.DMSFWD.TrainingCompletedList"/>         
         </classes>
     </test>
     <test name="CCWithDMS CC AIPerformToApprove">
@@ -81,4 +81,14 @@
            
         </classes>
   </test>
+  
+  <!--  <test name="Exclude">
+        <classes>
+        
+          
+           <class name="com.pss.dms.DMSFWD.DMSCFTReviewer"/>
+           <class name="com.pss.dms.DMSFWD.DMSQAApprover"/>
+                   
+        </classes>
+    </test> -->
 </suite>

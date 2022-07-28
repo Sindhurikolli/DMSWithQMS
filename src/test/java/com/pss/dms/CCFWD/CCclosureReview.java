@@ -95,9 +95,9 @@ public class CCclosureReview extends QMSLoginDetails {
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on closure review sub menu", sno,false);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		WebElement element = driver.findElement(By.cssSelector("a[href='ccClosureQAReviewPage.do']"));
-		jse.executeScript("arguments[0].scrollIntoView(true);", element);
+		jse.executeScript("arguments[0].click();", element);
 		Thread.sleep(2000);
-		driver.findElement(By.cssSelector("a[href='ccClosureQAReviewPage.do']")).click();
+//		driver.findElement(By.cssSelector("a[href='ccClosureQAReviewPage.do']")).click();
 		Helper.waitLoadRecords(driver, By.cssSelector("#ccClosureQaReviewDetailsTable > div > div.jtable-busy-message[style='display: none;']"));
 //		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#ccClosureQaReviewDetailsTable > div > div.jtable-busy-message[style='display: none;']")));
 		Thread.sleep(20000);
@@ -476,7 +476,7 @@ public class CCclosureReview extends QMSLoginDetails {
 //							"#ccClosureQaReviewDetailsTable > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next"))
 //							.click();// next page in Document approve list
 					Thread.sleep(3000);
-					WebDriverWait wait = new WebDriverWait(driver, 90);
+					WebDriverWait wait = new WebDriverWait(driver, 300);
 					wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
 							"#ccClosureQaReviewDetailsTable > div > div.jtable-busy-message[style='display: none;']")));
 					table = driver.findElement(By.id("ccClosureQaReviewDetailsTable"));// Document Tree approve table
