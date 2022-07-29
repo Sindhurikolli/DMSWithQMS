@@ -150,6 +150,7 @@ public class CreateNewDocumentSOP extends QMSLoginDetails {
 		sno++;
 		Thread.sleep(5000);
 		driver.findElement(By.id("userSelTree_2_span")).click();
+		Helper.waitLoadRecords(driver, By.cssSelector("#usersTableContainer > div > div.jtable-busy-message[style='display: none;']"));
 		boolean isRecordSelectedApprover = false;
 		int count = 0;
 		String ApprovalFromEcode = properties.getProperty("LMSApprover_E_CODE");
@@ -168,7 +169,7 @@ public class CreateNewDocumentSOP extends QMSLoginDetails {
 			System.out.println("Approver Not Selected");
 			Assert.assertTrue(false);
 		}
-		driver.findElement(By.id("versionNoInCreateNewDocInLms")).sendKeys(properties.getProperty("VersionNo"));
+		driver.findElement(By.id("versionNoInCreateNewDocInLms")).sendKeys(properties.getProperty("LMSDocumentVersion"));
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter Version No", sno, false);
 		sno++;
 		Thread.sleep(1000);
