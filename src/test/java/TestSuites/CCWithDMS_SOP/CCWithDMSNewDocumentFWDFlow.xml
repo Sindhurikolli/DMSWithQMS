@@ -7,21 +7,20 @@
         
 </listeners> 
     
-     <parameter name="DOCUMENT_NAME_SOP_DOCT_REQUEST" value="${DOCUMENT_NAME_SOP_DOCT_REQUEST}"/>
-     <parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="${DOCT_NO_INITIATE_NEW_DOCT_SOP}"/>
-     <parameter name="DocumentType" value="${DocumentType}"/>
-     <parameter name="ProductCode" value="${ProductCode}"/>  
-     
+     <parameter name="DOCUMENT_NAME_SOP_DOCT_REQUEST" value="Document"/>
+     <parameter name="DOCT_NO_INITIATE_NEW_DOCT_SOP" value="D"/>
+     <parameter name="DocumentType" value="SOP"/>
+     <parameter name="ProductCode" value="P1"/>  
   
-   <!--  <test name="DMS Properties File Update">
+    <test name="DMS Properties File Update">
         <classes>
-          <class name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties"> 
+           <class name="com.pss.dms.PropertiesFileUpdate.UpdateDMSProperties"> 
           	<methods>
-				 <include name="NewDocument"/> 
+				<include name="NewDocument"/>
 			</methods>
 			</class>
         </classes>
-    </test>    -->
+    </test>    
     <test name="CCWithDMS CC InitiationToApprove">
         <classes>
            <class name="com.pss.dms.CCFWD.CCInitiation"/>    

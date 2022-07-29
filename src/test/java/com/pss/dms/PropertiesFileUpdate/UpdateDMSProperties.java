@@ -90,5 +90,25 @@ public class UpdateDMSProperties {
 			System.out.println(e.getMessage());
 		}
 	}
+	@Test
+	@Parameters({ "DOCUMENT_NAME_SOP_DOCT_REQUEST", "DocumentType", "DOCT_NO_INITIATE_NEW_DOCT_SOP" })
+	public static void NewLMSDocument(String DOCUMENT_NAME_SOP_DOCT_REQUEST, String DocumentType,String DOCT_NO_INITIATE_NEW_DOCT_SOP) {
+		try {
 
+			PropertiesConfiguration dmsproperties = new PropertiesConfiguration(
+					"src\\test\\java\\com\\pss\\dms\\properties\\DMSProperties.properties");
+			String timeStamp = new SimpleDateFormat("yyMMddHHmmss").format(new Date());
+			dmsproperties.setProperty("DocumentName", DOCUMENT_NAME_SOP_DOCT_REQUEST + timeStamp);
+			dmsproperties.setProperty("DocTypeLMS", DocumentType);
+			dmsproperties.setProperty("DocumentNumber", DOCT_NO_INITIATE_NEW_DOCT_SOP + timeStamp);
+//			dmsproperties.setProperty("VersionNo", "1.0");
+			dmsproperties.setProperty("LMSDocumentVersion", "1.0"); 
+
+			dmsproperties.save();
+			System.out.println("dmsproperties.properties updated Successfully!!");
+
+		} catch (ConfigurationException e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }
