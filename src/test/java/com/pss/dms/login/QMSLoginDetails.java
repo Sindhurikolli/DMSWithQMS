@@ -148,7 +148,7 @@ public class QMSLoginDetails {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 //            driver.get(properties.getProperty("QMSLoginUrl"));
-			driver.manage().window().maximize();
+//			driver.manage().window().maximize();
 		}
 
 //		System.out.println("url : " + url);

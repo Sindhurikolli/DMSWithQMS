@@ -82,8 +82,8 @@ public class QAReviewerCC extends QMSLoginDetails {
 		document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on Review menu", sno, false);
 		driver.findElement(By.cssSelector("a[href='ccReviewPage.do']")).click();		
 		Thread.sleep(2000);
-		wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
-				"#changeControlReviewTableContainer > div > div.jtable-busy-message[style='display: none;']")));
+//		wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#changeControlReviewTableContainer > div > div.jtable-busy-message[style='display: none;']")));
+		Helper.waitLoadRecords(driver, By.cssSelector("#changeControlReviewTableContainer > div > div.jtable-busy-message[style='display: none;']"));
 		methodToDoDeptReviewChgControl();
 		document.close();
 		writer.close();
@@ -559,10 +559,10 @@ public class QAReviewerCC extends QMSLoginDetails {
 				}
 				noOfRecordsChecked += perPageNoOfRecordsPresent;
 				if ((!isRecordSelected) && (noOfRecordsChecked < totalNoOfRecords)) {
-					driver.findElement(By.cssSelector(
-							"#changeControlReviewTableContainer > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next"))
-							.click();// next page in Document approve list
+					Helper.clickElement(driver, By.cssSelector("#changeControlReviewTableContainer > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next"));
+//					driver.findElement(By.cssSelector("#changeControlReviewTableContainer > div > div.jtable-bottom-panel > div.jtable-left-area > span.jtable-page-list > span.jtable-page-number-next")).click();// next page in Document approve list
 					Thread.sleep(3000);
+					Helper.waitLoadRecords(driver, By.cssSelector("#changeControlReviewTableContainer > div > div.jtable-busy-message[style='display: none;']"));
 					table = driver.findElement(By.id("changeControlReviewTableContainer"));// Document Tree approve
 																							// table
 					tableBody = table.findElement(By.tagName("tbody"));
