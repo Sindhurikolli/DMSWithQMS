@@ -226,37 +226,37 @@ public class CCclosureReview extends QMSLoginDetails {
 			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter the comments", sno, false);
 			Thread.sleep(3000);
 			sno++;
-			WebElement element9 = driver.findElement(By.id("chkPointResultInCCClosureQARev3"));
-			js.executeScript("arguments[0].click();", element9);
-			Select DropDownCheckList2 = new Select(driver.findElement(By.id("chkPointResultInCCClosureQARev3")));
-			Thread.sleep(2000);
-			DropDownCheckList2.selectByIndex(1);
-			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on the check list status", sno,
-					false);
-			Thread.sleep(2000);
-			sno++;
-			WebElement element10 = driver.findElement(By.id("chkPointJustificationInCCClosureQARev3"));
-			js.executeScript("arguments[0].click();", element10);
-			driver.findElement(By.id("chkPointJustificationInCCClosureQARev3"))
-					.sendKeys(properties.getProperty("CC_2000"));
-			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter the comments", sno, false);
-			Thread.sleep(5000);
-			sno++;
-			WebElement element11 = driver.findElement(By.id("chkPointResultInCCClosureQARev4"));
-			js.executeScript("arguments[0].click();", element11);
-			Select DropDownCheckList3 = new Select(driver.findElement(By.id("chkPointResultInCCClosureQARev4")));
-			DropDownCheckList3.selectByIndex(1);
-			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on the check list status", sno,
-					false);
-			Thread.sleep(2000);
-			sno++;
-			WebElement element12 = driver.findElement(By.id("chkPointJustificationInCCClosureQARev4"));
-			js.executeScript("arguments[0].click();", element12);
-			driver.findElement(By.id("chkPointJustificationInCCClosureQARev4"))
-					.sendKeys(properties.getProperty("CC_2000"));
-			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter the comments", sno, false);
-			Thread.sleep(5000);
-			sno++;
+//			WebElement element9 = driver.findElement(By.id("chkPointResultInCCClosureQARev3"));
+//			js.executeScript("arguments[0].click();", element9);
+//			Select DropDownCheckList2 = new Select(driver.findElement(By.id("chkPointResultInCCClosureQARev3")));
+//			Thread.sleep(2000);
+//			DropDownCheckList2.selectByIndex(1);
+//			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on the check list status", sno,
+//					false);
+//			Thread.sleep(2000);
+//			sno++;
+//			WebElement element10 = driver.findElement(By.id("chkPointJustificationInCCClosureQARev3"));
+//			js.executeScript("arguments[0].click();", element10);
+//			driver.findElement(By.id("chkPointJustificationInCCClosureQARev3"))
+//					.sendKeys(properties.getProperty("CC_2000"));
+//			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter the comments", sno, false);
+//			Thread.sleep(5000);
+//			sno++;
+//			WebElement element11 = driver.findElement(By.id("chkPointResultInCCClosureQARev4"));
+//			js.executeScript("arguments[0].click();", element11);
+//			Select DropDownCheckList3 = new Select(driver.findElement(By.id("chkPointResultInCCClosureQARev4")));
+//			DropDownCheckList3.selectByIndex(1);
+//			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Click on the check list status", sno,
+//					false);
+//			Thread.sleep(2000);
+//			sno++;
+//			WebElement element12 = driver.findElement(By.id("chkPointJustificationInCCClosureQARev4"));
+//			js.executeScript("arguments[0].click();", element12);
+//			driver.findElement(By.id("chkPointJustificationInCCClosureQARev4"))
+//					.sendKeys(properties.getProperty("CC_2000"));
+//			document = Utilities.getScreenShotAndAddInLogDoc(driver, document, "Enter the comments", sno, false);
+//			Thread.sleep(5000);
+//			sno++;
 //			WebElement element13 = driver.findElement(By.id("chkPointResultInCCClosureQARev5"));
 //			js.executeScript("arguments[0].click();", element13);
 //			Select DropDownCheckList4 = new Select(driver.findElement(By.id("chkPointResultInCCClosureQARev5")));

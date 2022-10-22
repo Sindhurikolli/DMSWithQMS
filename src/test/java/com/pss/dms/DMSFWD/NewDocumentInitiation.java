@@ -25,7 +25,7 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-
+import com.pss.dms.HelperPackageDms.Helper;
 import com.pss.dms.login.QMSLoginDetails;
 import com.pss.dms.util.HeaderFooterPageEvent;
 import com.pss.dms.util.Utilities;
@@ -100,8 +100,8 @@ public class NewDocumentInitiation extends QMSLoginDetails {
 			action.sendKeys(Keys.ESCAPE).perform();
 		}
 		Thread.sleep(2000);
-		wait1.until(ExpectedConditions.presenceOfElementLocated(
-				By.cssSelector("#newDocIntiateTable > div > div.jtable-busy-message[style='display: none;']")));
+		Helper.waitLoadRecords(driver, By.cssSelector("#newDocIntiateTable > div > div.jtable-busy-message[style='display: none;']"));
+//		wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#newDocIntiateTable > div > div.jtable-busy-message[style='display: none;']")));
 		methodToSelectRecordApproveTemplateSOP();
 		Thread.sleep(4000);
 		document.close();
@@ -118,6 +118,7 @@ public class NewDocumentInitiation extends QMSLoginDetails {
 		boolean isRecordSelectedTrngApprovalSOP = false;
 		int count = 0;
 		String doctNameTrngApprovalSOP = properties.getProperty("DOCUMENT_NAME_SOP_DOCT_REQUEST");
+		System.out.println(doctNameTrngApprovalSOP);
 		Thread.sleep(1000);
 		sno++;
 		isRecordSelectedTrngApprovalSOP = selectRecordToDOTrngApproval(doctNameTrngApprovalSOP,
