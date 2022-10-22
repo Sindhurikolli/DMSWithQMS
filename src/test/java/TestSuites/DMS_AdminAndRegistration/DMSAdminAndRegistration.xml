@@ -16,8 +16,8 @@
 </test>  
  <test name="DMS Registration">
         <classes>           
-           <class name="com.pss.dms.DMSRegistration.MultiTemplateRegistrationAndApproveTest"/>  
-           <class name="com.pss.dms.DMSRegistration.MultiCreateWorkFlowForDmsAndApproveTest"/>  
+           <class name="com.pss.dms.DMSRegistration.MultiTemplateRegistrationAndApproveTest"/>   
+           <class name="com.pss.dms.DMSRegistration.MultiCreateWorkFlowForDmsAndApproveTest"/> 
            <class name="com.pss.dms.DMSRegistration.CreateWorkFlowUsersDms"/>
            <class name="com.pss.dms.DMSRegistration.ProductRegistration"/>
            <class name="com.pss.dms.DMSRegistration.ProductRegistrationApproval"/>  

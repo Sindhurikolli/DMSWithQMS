@@ -390,12 +390,12 @@ public class TrainingCompletedList extends QMSLoginDetails {
 		return isRecordSelectedUG;
 	}
 
-	@AfterMethod
-	public void testIT(ITestResult result) {
-		if (ITestResult.FAILURE == result.getStatus()) {
-			Utility.captureScreenshot(driver, result.getName());
-		}
-
-	}
+//	@AfterMethod
+//	public void testIT(ITestResult result) {
+//		if (ITestResult.FAILURE == result.getStatus()) {
+//			Utility.captureScreenshot(driver, result.getName());
+//		}
+//
+//	}
 
 }

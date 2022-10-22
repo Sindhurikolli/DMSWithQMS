@@ -6,11 +6,11 @@
         <listener class-name="com.pss.dms.Listerners.SuiteFailingInvokedMethodListener"/>
 </listeners>
     
-    <parameter name="ADMINURL" value="http://192.168.0.112:4040/ADMIN/"/>
-	<parameter name="DMSURL" value="http://192.168.0.109:4041/DMS/"/>
-	<parameter name="QMSLoginUrl" value="http://192.168.0.110:4042/QMS/Login.do"/>
-	<parameter name="LMSURL" value="http://192.168.0.109:4041/LMS/"/>
-	<parameter name="QMSRegistrationURL" value="http://192.168.0.112:4040/REGISTRATION/Login.do"/>
+    <parameter name="ADMINURL" value="http://192.168.0.122:5555/ADMIN"/>
+	<parameter name="DMSURL" value="http://192.168.0.122:5151/DMS"/>
+	<parameter name="QMSLoginUrl" value="http://192.168.0.122:5252/QMS"/>
+	<parameter name="LMSURL" value="http://192.168.0.122:5151/LMS"/>
+	<parameter name="QMSRegistrationURL" value="http://192.168.0.122:5555/REGISTRATION/Login.do"/>
 	
     <test name="URLUpdateinPropertiesfile">
         <classes>
